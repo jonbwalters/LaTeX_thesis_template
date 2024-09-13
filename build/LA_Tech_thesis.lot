@@ -1,0 +1,10 @@
+\noaddvspace 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces A sample table. If there are no tables, comment out the $\setminus $include$\{ $tables$\} $ command in phd\underline {~}thesis.tex. {\em Note how the "include" spills too far to the right in the list of figures. This type of margin infraction must be corrected manually.} }}{9}{}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Another sample table and another fun rule: Entries in the list of tables/figures should have at least 3 dots in the dotted line between entry and page number. Unless there is an unfortunate spill, which would need to be fixed anyway, \LaTeX \ should do this automatically. }}{9}{}%
+So the entries above would need to be fixed by rewording to eliminate the spills. (And entries like this one are not permissible.) \\ ~\\ 
+Also note that to shrink the gap between the dotted line and the end of the entry, you should put the closing parenthesis $\} $ of the caption command right after the last work of the caption, not on the next line. Compare the entries for Table \ref {tablelabel} (bad) and for Figure \ref {batgull2} on the next page. 
+\addvspace {10\p@ }
+\addvspace {10\p@ }

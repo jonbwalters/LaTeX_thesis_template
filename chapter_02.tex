@@ -1,0 +1,279 @@
+\chapter{TYPESETTING IN \LaTeX }\label{chap2:latex}
+
+
+You can see how the various types of environments
+are created by looking at the corresponding source code.
+
+
+\section{Section Title}
+
+\begin{theorem}
+\label{th1}
+
+Let's say this is our first theorem.
+
+\end{theorem}
+
+
+{\bf Proof.}
+Type proofs as regular paragraphs. \LaTeX \ will treat them as
+regular paragraphs and automatically format them consistently.
+
+
+\begin{definition}
+\label{def1}
+
+Let's say this is our first definition.
+
+\end{definition}
+
+
+Here's how mathematics can be displayed.
+Note that a one-line ``paragraph" before an
+itemized or enumerated list can look a bit funny, because the
+indentations don't match up.
+
+\begin{itemize}
+\item
+In-text math mode: $\int _0 ^1 x^2 dx = {1\over 3} .$
+
+
+
+\item
+Display  math mode:
+{\em
+To assure the proper spacing, the \$ \$ $\cdots $ \$ \$
+environment
+must start on the line {\bf immediately} after the preceding text.}
+$$\int _0 ^1 x^2 dx = {1\over 3} .$$
+
+\item
+Display within text math mode: $\displaystyle{ \int _0 ^1 x^2 dx = {1\over 3} .} $
+
+\item
+And here is how we line up equalities (equation array).
+{\em To assure the proper spacing, the $\setminus $begin$\{ $eqnarray*$\} $
+must be on the line {\bf immediately} after the preceding text.}
+\begin{eqnarray*}
+\int _0 ^1 x^2 dx
+& = &
+\left. {1\over 3} x^2 \right| _{0} ^1
+\\
+& = &
+{1\over 3}
+\end{eqnarray*}
+
+\end{itemize}
+
+
+Note that delimiters like braces can be automatically adjusted to the right size
+by using the ``$\setminus $left" and ``$\setminus $right" commands.
+The above shows that the delimiters themselves need not match in shape and
+that a period gives an unprinted dummy delimiter.
+
+
+
+
+The equation array also works when things get ugly:
+\begin{eqnarray*}
+\lefteqn{
+\int _{\Omega
+} \left|
+D^\alpha f(x)
+-D^\alpha f_a (x)\right| ^p
+\ d\lambda (x)
+}
+\\
+& = &
+\int _{\Omega
+}
+\left| \int _\Omega D^\alpha f(x) g_a (x-z) \ d\lambda (z)-
+\int _\Omega D^\alpha f (z) g_a (x-z)  \ d\lambda (z)
+\right| ^p
+\ d\lambda (x)
+\\
+& \leq &
+\int _\Omega \left(
+\int _\Omega \left| D^\alpha f(x)-D^\alpha f (z) \right|
+g_a (x-z)  \ d\lambda (z)
+\right) ^p
+\ d\lambda (x)
+\\
+& \leq &
+\int _\Omega \left(
+\left(
+\int _\Omega \left( \left| D^\alpha f(x)-D^\alpha f (z) \right|
+\big( g_a (x-z)\big) ^{1\over p}  \right) ^p \ d\lambda (z)
+\right) ^{1\over p}
+\times \right.
+\\
+& &
+\quad
+\times
+\left.
+\left(
+\int _\Omega
+\left(
+\big( g_a (x-z)\big) ^{1-{1\over p}}  \right) ^q \ d\lambda (z)
+\right) ^{1\over q}
+\right) ^p
+\ d\lambda (x)
+\\
+& = &
+\int _\Omega
+\int _\Omega \left| D^\alpha f(x)-D^\alpha f (z) \right| ^p
+g_a (x-z) \ d\lambda (z)
+\left(
+\int _\Omega
+g_a (x-z)   \ d\lambda (z)
+\right) ^{p\over q}
+\ d\lambda (x)
+\\
+& \leq &
+\int _\Omega
+\int _{B_a (0)} \left| D^\alpha f(x)-D^\alpha f (x+y) \right| ^p
+g_a (-y) \ d\lambda (y)
+\ d\lambda (x)
+\\
+& = &
+\int _{B_a (0)}
+\int _\Omega
+\left| D^\alpha f(x)-D^\alpha f (x+y) \right| ^p
+\ d\lambda (x)
+g_a (y) \ d\lambda (y)
+\\
+& < &
+\int _{B_a (0)}
+\nu
+g_a (y) \ d\lambda (y)
+=\nu .
+\end{eqnarray*}
+
+
+
+
+
+\section{Next Section Title}
+
+
+
+\begin{definition}
+\label{def2}
+
+Let's say this is our second definition.
+
+\end{definition}
+
+
+\begin{theorem}
+\label{th2}
+
+Let's say this is our second theorem.
+
+\end{theorem}
+
+
+
+The block at the end of a proof can be generated like this. \qed
+
+
+\section{Enumeration and Itemization}
+
+{\bf Enumeration} is done like this
+
+\begin{enumerate}
+\item
+\label{en1}
+First entry.
+
+\item
+\label{en2}
+Second entry.
+
+\end{enumerate}
+
+
+{\bf Bullets} are done like this
+
+\begin{itemize}
+\item
+First bullet.
+
+\item
+Second bullet.
+
+\end{itemize}
+
+
+
+
+
+\section{Things to Explore}
+\label{explore}
+
+Go ahead and move the theorems, definitions and items around.
+After compiling twice, the references will be correct.
+
+\begin{itemize}
+\item
+The first theorem is Theorem \ref{th1}.
+
+\item
+The second theorem is Theorem \ref{th2}.
+
+\item
+The first definition is Definition \ref{def1}.
+
+\item
+The second definition is Definition \ref{def2}.
+
+\item
+The first enumeration entry is \ref{en1}.
+
+\item
+The second enumeration entry is \ref{en2}.
+
+
+\item
+The first entry in the bibliography is \cite{bib1}.
+
+\item
+The second entry in the bibliography is \cite{bib2}.
+
+\end{itemize}
+
+
+\section{Bad Line and Page Breaks}
+
+
+Although \LaTeX \ is designed to produce pages that look good,
+sometimes it produces a ``widow" (first line of a paragraph
+alone at the end of a page) or an ``orphan"
+(last line of a paragraph alone at the start of a new page).
+To force a page break, use the
+$\setminus $clearpage command.
+
+
+To force a right-justified line break,\linebreak use the
+$\setminus $linebreak command.
+(But don't spread lines as above. You can see that it looks funny.)
+
+
+
+\subsection{Long Subsection Headings 
+Long Subsection \\
+Headings 
+Long Subsection Headings
+}
+
+
+Sometimes a section or subsection heading can be a bit long.
+To accommodate width requirements for headings, 
+use hard carriage returns (``$\setminus \setminus $")
+to insert line breaks in the heading. These hard carriage returns 
+will also be used in the table of contents, but 
+I was told that that is acceptable. 
+Remember to set up the heading in inverted pyramid form
+(each line is narrower than the previous line).
+
+

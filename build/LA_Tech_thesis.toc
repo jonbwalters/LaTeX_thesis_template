@@ -1,0 +1,23 @@
+\contentsline {chapter}{ABSTRACT}{iii}{}%
+\contentsline {chapter}{DEDICATION}{v}{}%
+\contentsline {chapter}{LIST OF TABLES}{viii}{}%
+\contentsline {chapter}{LIST OF FIGURES}{ix}{}%
+\contentsline {chapter}{ACKNOWLEDGMENTS}{x}{}%
+\contentsline {chapter}{PREFACE}{xi}{}%
+\contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{}%
+\contentsline {chapter}{\numberline {2}TYPESETTING IN \LaTeX }{2}{}%
+\contentsline {section}{\numberline {2.1}Section Title}{2}{}%
+\contentsline {section}{\numberline {2.2}Next Section Title}{4}{}%
+\contentsline {section}{\numberline {2.3}Enumeration and Itemization}{4}{}%
+\contentsline {section}{\numberline {2.4}Things to Explore}{4}{}%
+\contentsline {section}{\numberline {2.5}Bad Line and Page Breaks}{5}{}%
+\contentsline {subsection}{\numberline {2.5.1}Long Subsection Headings Long Subsection \\ Headings Long Subsection Headings }{5}{}%
+\contentsline {chapter}{\numberline {3}PLACEMENT OF FIGURES IN \LaTeX }{6}{}%
+\contentsline {section}{\numberline {3.1}Tables}{8}{}%
+\contentsline {section}{\numberline {3.2}Note on Sections}{9}{}%
+\contentsline {chapter}{\numberline {4}CONCLUSIONS}{10}{}%
+\renewcommand {\cftchappresnum }{APPENDIX } 
+\contentsline {chapter}{\numberline {A}APPENDICES (IF DESIRED)}{12}{}%
+\contentsline {chapter}{BIBLIOGRAPHY}{15}{}%
+\contentsline {chapter}{VITA}{16}{}%
+Note that an ``orphan" such as this last table of contents entry for the vita would need to be remedied.

@@ -1,0 +1,224 @@
+% The preamble contains macro definitions
+
+
+
+
+
+\def\qed{\hfill\ \rule{2mm}{2mm} }
+
+
+
+\documentclass[12pt]{article}
+
+
+
+%  The newtheorem ``guess" is used to get a uniform numbering of all items
+%    in each section.
+
+
+\newtheorem{guess}{Guess}[section]
+
+\newtheorem{define}[guess]{Definition}
+
+\newtheorem{prop}[guess]{Proposition}
+
+\newtheorem{theorem}[guess]{Theorem}
+
+\newtheorem{cor}[guess]{Corollary}
+
+\newtheorem{lem}[guess]{Lemma}
+
+
+
+
+
+
+\begin{document}
+
+
+
+
+\title{
+Title Goes Here
+\thanks{Acknowledgements can go here.} }
+
+
+
+\author{
+\small Name\\
+\small Address 1\\
+\small Address 2\\
+\small Address 3\\
+\small {\tt e-mail }
+}
+
+
+\date{\small \today}
+
+\maketitle
+
+
+\begin{abstract}
+
+Abstract goes here.
+
+This template is intended to demonstrate/make available some of the most used
+features of \LaTeX. These are the sectioning, enumeration and referencing features as
+well as the equation array. In Section \ref{explore} some possible explorations of
+the automatic renumbering are suggested.
+
+I use this template for all my papers. B. Schr\"oder.
+
+\end{abstract}
+
+
+\section{Section Title}
+
+\begin{theorem}
+\label{th1}
+
+Let's say this is our first theorem.
+
+\end{theorem}
+
+
+
+\begin{define}
+\label{def1}
+
+Let's say this is our first definition.
+
+\end{define}
+
+
+Here's how mathematics can be displayed.
+
+
+\begin{itemize}
+\item
+In-text math mode: $\int _0 ^1 x^2 dx = {1\over 3} .$
+
+
+
+\item
+Display  math mode: $$\int _0 ^1 x^2 dx = {1\over 3} .$$
+
+\item
+Display within text math mode: $\displaystyle{ \int _0 ^1 x^2 dx = {1\over 3} .} $
+
+\item
+And here is how we line up equalities (equation array):
+
+\begin{eqnarray*}
+\int _0 ^1 x^2 dx
+& = &
+\left. {1\over 3} x^2 \right| _{0} ^1
+\\
+& = &
+{1\over 3}
+\end{eqnarray*}
+
+Note that delimiters like braces can be automatically adjusted to the right size
+by using the ``$\setminus $left" and ``$\setminus $right" commands.
+The above shows that the delimiters themselves need not match in shape and
+a period gives an unprinted dummy delimiter.
+
+\end{itemize}
+
+
+
+
+\section{Next Section Title}
+
+
+
+\begin{define}
+\label{def2}
+
+Let's say this is our second definition.
+
+\end{define}
+
+
+\begin{theorem}
+\label{th2}
+
+Let's say this is our second theorem.
+
+\end{theorem}
+
+
+
+The block at the end of a proof can be generated like this. \qed
+
+
+\vspace{.1in}
+
+Enumeration is done like this
+
+\begin{enumerate}
+\item
+\label{en1}
+First entry.
+
+\item
+\label{en2}
+Second entry.
+
+\end{enumerate}
+
+
+
+
+
+\section{Things to Explore}
+\label{explore}
+
+Go ahead and move the theorems, definitions and items around.
+After compiling twice, the references will be correct.
+
+\begin{itemize}
+\item
+The first theorem is Theorem \ref{th1}.
+
+\item
+The second theorem is Theorem \ref{th2}.
+
+\item
+The first definition is Definition \ref{def1}.
+
+\item
+The second definition is Definition \ref{def2}.
+
+\item
+The first enumeration entry is \ref{en1}.
+
+\item
+The second enumeration entry is \ref{en2}.
+
+
+\item
+The first entry in the bibliography is \cite{bib1}.
+
+\item
+The second entry in the bibliography is \cite{bib2}.
+
+\end{itemize}
+
+
+
+\begin{thebibliography}{99}
+\bibitem{bib1}
+First entry in the bibliography.
+
+\bibitem{bib2}
+Second entry in the bibliography.
+
+
+\end{thebibliography}
+
+
+
+
+
+\end{document}
