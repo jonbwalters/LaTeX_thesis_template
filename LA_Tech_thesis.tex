@@ -1,4 +1,4 @@
-\documentclass[12pt]{report}
+\documentclass{LA_Tech}
 
 %This is the main thesis file. Even though the chapter contents are saved in other files, you must always TeXify %from the main file.
 
@@ -14,66 +14,15 @@
 \usepackage{fancyvrb}
 \usepackage{fancyhdr}
 \usepackage{color}
-\usepackage{sectsty}
 \usepackage[calcwidth]{titlesec}
-\usepackage{tocloft}
 \usepackage{float}
 \usepackage{indentfirst,microtype}
 \usepackage[labelfont=bf]{caption} %For bold label for figures and tables (for indented captions, use the "hang" option.
 
-\AtBeginDocument{\setlength\abovedisplayskip{3pt}}
-\AtBeginDocument{\setlength\belowdisplayskip{3pt}}
-
-\renewcommand{\cfttoctitlefont}{\large\bfseries}
-\renewcommand{\cftloftitlefont}{\large\bfseries}
-\renewcommand{\cftlottitlefont}{\large\bfseries}
-
-%\setlength{\cftbeforetoctitleskip}{42pt}
-%\setlength{\cftaftertoctitleskip}{12pt}
-\setlength{\cftbeforeloftitleskip}{42pt}
-\setlength{\cftafterloftitleskip}{12pt}
-\setlength{\cftbeforepartskip}{0pt}
-\setlength{\cftbeforechapskip}{0pt}
-\setlength{\cftbeforesecskip}{0pt}
-\setlength{\cftbeforesubsecskip}{0pt}
-\newcommand*{\noaddvspace}{\renewcommand*{\addvspace}[1]{}}
-\addtocontents{lof}{\protect\noaddvspace}
-\setlength{\parskip}{0in}%{2ex plus0.5ex minus0.2ex}
-\setlength{\parindent}{0.5in}
-
 \captionsetup[table]{singlelinecheck=off}
-
-%This uses sectsty package to change the style of the headings.
-%\allsectionsfont{\sffamily\underline}
-%\allsectionsfont{\large\centering\underline}
-%\sectionfont{\normalfont\sffamily\large\underline\bfseries}
-%\subsectionfont{\normalsize\underline}
-
-%This will underline section and subsection headings
-%\titleformat{\section}{\large\centering\bfseries}{\thesection}{1em}{}%{\uline}
-%\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{\uline}
 
 \newlength{\SpaceBeforeChapter}
 \setlength{\SpaceBeforeChapter}{0.55in}
-
-
-
-\setlength{\textwidth}{6in}% 8.5 - 1in - 1.5in = 6in
-\setlength{\textheight}{9in}% 11 - 1in - 1in = 9in
-% The height of the header
-\setlength{\headheight}{0.202in}
-% the space between the header and the start of the document is 0.5 - .202, because we want 1in margins
-\setlength{\headsep}{0.298in}
-% We want the page number to display 0.5 inches from the bottom of the text
-\setlength{\footskip}{0.5in }
-% This will make the right margin 1in + 0.5
-\setlength{\oddsidemargin}{0.5in}
-\setlength{\evensidemargin}{0.5in}
-% No horizontal offset is needed
-\setlength{\hoffset}{0pt}
-% We want the header to begin showing at 1.0in + \voffset ~ which is 0.5 for the page number
-\setlength{\voffset}{-0.5in}
-\setlength{\topmargin}{0pt}
 
 % To create triple spacing, we use single spacing, then add 3ex to create triple spacing ~ there may be a more correct way to do this
 \titleformat{\chapter}[display]{\singlespacing\centering\large\bfseries}{\MakeUppercase{\chaptertitlename}~\thechapter}{4ex}{\setlength{\parskip}{0pt}\large\uppercase}[\setlength{\parskip}{0pt}]%{0pt}]

@@ -4,7 +4,7 @@ build = build
 bib = bib.bib
 engine = pdflatex
 
-$(document).pdf : $(document).tex $(bib) $(figs) $(sections) $(data) | $(build)
+$(document).pdf : $(document).tex $(bib) $(figs) $(sections) $(data) LA_Tech.cls | $(build)
 	latexmk -f -g -$(engine) -halt-on-error -silent -file-line-error -output-directory=$(build) -shell-escape ./$(document).tex && cp $(build)/$(document).pdf $(document).pdf
 
 $(build) :
