@@ -96,17 +96,6 @@
 
 \renewcommand{\baselinestretch}{2.0}
 
-\let\oldthebibliography=\thebibliography
-\let\endoldthebibliography=\endthebibliography
-\renewenvironment{thebibliography}[1]{%
-	\begin{oldthebibliography}{#1}%
-		\setlength{\parskip}{0pt}%
-		\setlength{\itemsep}{0pt}%
-}%
-{%
-	\end{oldthebibliography}%
-}
-
 \let\olditemize=\itemize
 \let\endolditemize=\enditemize
 \renewenvironment{itemize}{%

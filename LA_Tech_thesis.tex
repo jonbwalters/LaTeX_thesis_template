@@ -15,6 +15,8 @@
 \usepackage{color}
 \usepackage{float}
 \usepackage{indentfirst,microtype}
+\usepackage[backend=biber, sorting=none, defernumbers = false, style = ieee]{biblatex}
+\addbibresource{bib.bib}
 
 %Main file to compile the thesis.
 %DO NOT CHANGE THIS FILE, EXCEPT FOR THE INCLUDE COMMANDS
@@ -121,17 +123,16 @@ scholarly dissemination form.
 \include{appendix_a} %Comment out if there are no appendices
 
 
-% Bibliography
-\addcontentsline{toc}{chapter}{BIBLIOGRAPHY}
-\renewcommand{\bibname}{\MakeUppercase{Bibliography}}
-\begin{singlespace}
-
-\include{bibliography}
-%Note: There also was a change in the code for the bibliography so that 
-%entries are single spaced with a double space between entries.
-
-\end{singlespace}
 
 \include{chapter_vita}
 \batchmode
+	% Bibliography
+	\addcontentsline{toc}{chapter}{BIBLIOGRAPHY}
+	\begin{singlespace}
+	
+	\nocite{bib3}
+	\setlength{\bibitemsep}{24pt}
+	\printbibliography[
+		title={\MakeUppercase{Bibliography}}
+	]
 \end{document}
