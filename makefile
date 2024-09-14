@@ -1,4 +1,4 @@
-document = LA_Tech_thesis
+document = thesis
 build = build
 
 bib = bib.bib
