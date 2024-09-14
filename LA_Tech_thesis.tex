@@ -47,85 +47,57 @@
 \date{Defense Date}
 
 \begin{document}
-
-\scrollmode
-\input{nagging.tex}
-
-\setcounter{page}{0}
-
-\pagenumbering{roman}
-\thispagestyle{empty}
-
-\include{titlepage}
-
-\newpage
-
-\thispagestyle{empty}
-Replace this page with the Signature Page.
-
-
-\newpage
-
-
-\include{abstract}
-
-
-\vfill\vfill
-\newpage
-\thispagestyle{empty}
-Replace this page with the approval for
-scholarly dissemination form.
-
-
-\newpage
-
-\include{dedication}
-
-\newpage
-
-\include{contents}      % This file typesets the Table of Contents,
-                        % List of Tables, and List of Figure.
-                        % DO NOT CHANGE THIS FILE
-
-
-\newpage
-
-\include{acknowledgements}
-
-\newpage
-
-\include{preface}
-
-\pagenumbering{arabic}
-
-\include{chapter_01} % Introduction
-
-\include{chapter_02} % Thesis body starts, as many chapters as necesssary
-
-\include{chapter_03}
-
-\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{APPENDIX } }
-
-\include{end_chapter} % Conclusions
-%MUST PUT LAST CHAPTER IN THIS FILE TO HAVE FIRST APPENDIX CALLED
-%APPENDIX, NOT CHAPTER IN TABLE OF CONTENTS
-
-
-
-\appendix
-
-
-\renewcommand{\thefigure}{\Alph{chapter}.\arabic{figure}}
-\renewcommand{\thetable}{\Alph{chapter}.\arabic{table}}
-
-
-
-\include{appendix_a} %Comment out if there are no appendices
-
-
-
-\include{chapter_vita}
-\batchmode
+	\scrollmode
+	\include{nagging.tex}
+	
+	\setcounter{page}{0}
+	
+	\pagenumbering{roman}
+	\thispagestyle{empty}
+	
+	\include{titlepage}
+	
+	\thispagestyle{empty}
+	Replace this page with the Signature Page.
+	
+	\include{abstract}
+	
+	\thispagestyle{empty}
+	Replace this page with the approval for
+	scholarly dissemination form.
+	
+	\include{dedication}
+	
+	\include{contents}      % This file typesets the Table of Contents,
+									% List of Tables, and List of Figure.
+									% DO NOT CHANGE THIS FILE
+	
+	\include{acknowledgements}
+	\include{preface}
+	
+	\pagenumbering{arabic}
+	
+	\include{chapter_01} % Introduction
+	\include{chapter_02} % Thesis body starts, as many chapters as necesssary
+	\include{chapter_03}
+	
+	\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{APPENDIX } }
+	
+	\include{end_chapter} % Conclusions
+	%MUST PUT LAST CHAPTER IN THIS FILE TO HAVE FIRST APPENDIX CALLED
+	%APPENDIX, NOT CHAPTER IN TABLE OF CONTENTS
+	
+	\appendix
+	
+	
+	\renewcommand{\thefigure}{\Alph{chapter}.\arabic{figure}}
+	\renewcommand{\thetable}{\Alph{chapter}.\arabic{table}}
+	
+	
+	
+	\include{appendix_a} %Comment out if there are no appendices
+	
+	
 	% Bibliography
 	\addcontentsline{toc}{chapter}{BIBLIOGRAPHY}
 	\begin{singlespace}
@@ -135,4 +107,8 @@ scholarly dissemination form.
 	\printbibliography[
 		title={\MakeUppercase{Bibliography}}
 	]
+	\end{singlespace}
+	
+	\include{chapter_vita}
+	\batchmode
 \end{document}
