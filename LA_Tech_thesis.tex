@@ -21,15 +21,6 @@
 
 \allowdisplaybreaks
 
-    % THIS WILL FORCE EQUATION NUMBERS TO START OVER WITH EACH
-    % NEW CHAPTER
-    \numberwithin{equation}{chapter}
-    \renewcommand{\theequation}
-        {\arabic{chapter}.\arabic{equation}}
-    \renewcommand{\thefigure}
-        {\arabic{chapter}.\arabic{figure}}
-    \renewcommand{\thetable}
-        {\arabic{chapter}.\arabic{table}}
 \newcommand{\ds}{\displaystyle}
 \newcommand{\p}{\partial}
 \newcommand{\R}{\text{I\!R}}
@@ -40,9 +31,13 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{algorithm}{Algorithm}
-%\renewcommand{\cftfigfont}{Figure }
-%\renewcommand{\cfttabfont}{Table }
 
+% THIS WILL FORCE EQUATION NUMBERS TO START OVER WITH EACH
+% NEW CHAPTER
+\numberwithin{equation}{chapter}
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
 
 
 \title{Thesis Title}
