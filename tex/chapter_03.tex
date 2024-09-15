@@ -21,13 +21,7 @@ refers to the figure and use the [h] parameter.
 
 
 \begin{figure}[h]
-
-
-\ \\
-
 \centerline{\input{figs/petersen_graph_with_bottom.pic}}
-
-
 \caption{
 The line
 in the figure above is at height $y=0$ in \TeX CAD.
@@ -51,10 +45,8 @@ following text, which \LaTeX \ does automatically.
 
 
 \begin{figure}[h]
-
-\ \\
-
-\centerline{\input{figs/petersen_graph_high.pic}}
+\centering
+\input{figs/petersen_graph_high.pic}
 \caption{If your figure has some white space above the unseen actual border,
 like this one, only less extreme, please make a note on the printout that
 goes to the proofreader. Without the line on the bottom and the text,
@@ -75,7 +67,6 @@ and using [h] will place the figure right there, if possible, and,
 if not, it will place the figure at the top of the next page,
 which is in accordance with technical writing rules.
 This is how Figures \ref{pg1} and \ref{pg3} were placed.
-
 
 %\LaTeX \ will automatically place
 %large figures
@@ -124,10 +115,6 @@ command.
 
 
 \begin{figure}[h] %% figure
-
-\ \\
-\vspace*{-.18in}
-
 \begin{center}
 \includegraphics[width=.45\linewidth]{figs/bat_b.eps}\hspace*{0.04in}
 \includegraphics[width=.36\linewidth]{figs/gull2_b.eps}\\
@@ -146,7 +133,6 @@ Morphing gull wings.
 {\em Note how the URL spills too far to the right in the
 list of figures. This type of margin infraction must be
 corrected manually.}}
-%\end{singlespace}
 \label{batgull2}
 \end{figure}
 
@@ -168,9 +154,6 @@ is an example.
 
 
 \begin{table}[h]
-
-\ \\
-
 \caption{A sample table. If there are no tables,
 comment out the $\setminus $include$\{ $tables$\} $ command in
 phd\underline{~}thesis.tex.
@@ -178,10 +161,8 @@ phd\underline{~}thesis.tex.
 list of figures. This type of margin infraction must be
 corrected manually.}
 }
+\vspace{12pt}
 \label{tablelabel}
-
-\ \\
-
 \centerline{
 \begin{tabular}{|l|l|r|}
 \hline
@@ -197,10 +178,6 @@ T  & T  & T  \\
 \hline
 \end{tabular}
 }
-
-\ \\
-\vspace{-.1in}
-
 \end{table}
 
 
@@ -223,10 +200,6 @@ but before the $\setminus $end$\{ $table$\} $ command.
 
 
 \begin{table}[h]
-
-\ \\
-\vspace{-.15in}
-
 \caption{Another sample table and another fun rule:
 Entries in the list of tables/figures
 should have at least 3 dots in the dotted
@@ -235,9 +208,7 @@ an unfortunate spill, which would need to be fixed anyway,
 \LaTeX \ should do this automatically.
 }
 \label{tablelabel2}
-
-\ \\
-
+\vspace{12pt}
 \centerline{
 \begin{tabular}{|l|l|r|}
 \hline
