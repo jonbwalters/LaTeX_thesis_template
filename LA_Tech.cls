@@ -5,6 +5,7 @@
 \LoadClass[12pt]{report}
 
 %% Load additional packages and commands.
+\usepackage{hyperref}
 \usepackage{tocloft}
 \usepackage[labelfont=bf]{caption} %For bold label for figures and tables (for indented captions, use the "hang" option.
 \usepackage[calcwidth]{titlesec}
