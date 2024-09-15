@@ -48,42 +48,42 @@
 
 \begin{document}
 	\scrollmode
-	\include{nagging.tex}
+	\include{tex/nagging.tex}
 	
 	\setcounter{page}{0}
 	
 	\pagenumbering{roman}
 	\thispagestyle{empty}
 	
-	\include{titlepage}
+	\include{tex/titlepage}
 	
 	\thispagestyle{empty}
 	Replace this page with the Signature Page.
 	
-	\include{abstract}
+	\include{tex/abstract}
 	
 	\thispagestyle{empty}
 	Replace this page with the approval for
 	scholarly dissemination form.
 	
-	\include{dedication}
+	\include{tex/dedication}
 	
-	\include{contents}      % This file typesets the Table of Contents,
+	\include{tex/contents}      % This file typesets the Table of Contents,
 									% List of Tables, and List of Figure.
 									% DO NOT CHANGE THIS FILE
 	
-	\include{acknowledgements}
-	\include{preface}
+	\include{tex/acknowledgements}
+	\include{tex/preface}
 	
 	\pagenumbering{arabic}
 	
-	\include{chapter_01} % Introduction
-	\include{chapter_02} % Thesis body starts, as many chapters as necesssary
-	\include{chapter_03}
+	\include{tex/chapter_01} % Introduction
+	\include{tex/chapter_02} % Thesis body starts, as many chapters as necesssary
+	\include{tex/chapter_03}
 	
 	\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{APPENDIX } }
 	
-	\include{end_chapter} % Conclusions
+	\include{tex/end_chapter} % Conclusions
 	%MUST PUT LAST CHAPTER IN THIS FILE TO HAVE FIRST APPENDIX CALLED
 	%APPENDIX, NOT CHAPTER IN TABLE OF CONTENTS
 	
@@ -95,7 +95,7 @@
 	
 	
 	
-	\include{appendix_a} %Comment out if there are no appendices
+	\include{tex/appendix_a} %Comment out if there are no appendices
 	
 	
 	% Bibliography
@@ -109,6 +109,6 @@
 	]
 	\end{singlespace}
 	
-	\include{chapter_vita}
+	\include{tex/chapter_vita}
 	\batchmode
 \end{document}

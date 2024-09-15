@@ -47,6 +47,11 @@
 \setlength{\voffset}{-0.5in}
 \setlength{\topmargin}{0pt}
 
+%\setlength{\textfloatsep}{50pt}
+%\setlength{\floatsep}{}
+%\setlength{\intextsep}{20pt}
+%\setlength{\belowcaptionskip}{0pt}
+
 \newlength{\SpaceBeforeChapter}
 \setlength{\SpaceBeforeChapter}{0.55in}
 
