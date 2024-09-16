@@ -11,8 +11,14 @@
 \usepackage[calcwidth]{titlesec}
 \usepackage{fancyhdr}
 \usepackage{indentfirst,microtype}
+\usepackage{amsmath}
 
 %% Additional TeX/LaTeX code...
+
+%This is to avoid widows, orphans, and hypenations at the end of a page.
+\brokenpenalty=10000
+\widowpenalty=10000
+\clubpenalty=10000
 
 \AtBeginDocument{\setlength\abovedisplayskip{3pt}}
 \AtBeginDocument{\setlength\belowdisplayskip{3pt}}
@@ -131,11 +137,6 @@
 	\end{oldenumerate}%
 }
 
-%This is to avoid widows, orphans, and hypenations at the end of a page.
-\brokenpenalty=10000
-\widowpenalty=10000
-\clubpenalty=10000
-
 % using fancyhdr ............................................
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]
@@ -149,5 +150,13 @@
 \rfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+
+% Using amsmath...........................................
+% THIS WILL FORCE EQUATION NUMBERS TO START OVER WITH EACH
+% NEW CHAPTER
+\numberwithin{equation}{chapter}
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
 
 \endinput
