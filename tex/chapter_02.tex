@@ -52,39 +52,38 @@ Display within text math mode: $\displaystyle{ \int _0 ^1 x^2 dx = {1\over 3} .}
 
 \item
 And here is how we line up equalities (equation array).
-{\em To assure the proper spacing, the $\setminus $begin$\{ $eqnarray*$\} $
+{\em To assure the proper spacing, the \verb+\begin{align*}+
 must be on the line {\bf immediately} after the preceding text.}
-\begin{eqnarray*}
+\begin{align*}
 \int _0 ^1 x^2 dx
-& = &
+& =
 \left. {1\over 3} x^2 \right| _{0} ^1
 \\
-& = &
+& =
 {1\over 3}
-\end{eqnarray*}
+\end{align*}
 
 \end{itemize}
 
 
 Note that delimiters like braces can be automatically adjusted to the right size
-by using the ``$\setminus $left" and ``$\setminus $right" commands.
+by using the \verb+\left+ and \verb+\right+ commands.
 The above shows that the delimiters themselves need not match in shape and
 that a period gives an unprinted dummy delimiter.
 
 
 
 
-The equation array also works when things get ugly:
-\begin{eqnarray*}
-\lefteqn{
+Align also works when things get ugly:
+\begin{align*}
+\MoveEqLeft
 \int _{\Omega
 } \left|
 D^\alpha f(x)
 -D^\alpha f_a (x)\right| ^p
 \ d\lambda (x)
-}
 \\
-& = &
+= &
 \int _{\Omega
 }
 \left| \int _\Omega D^\alpha f(x) g_a (x-z) \ d\lambda (z)-
@@ -92,14 +91,14 @@ D^\alpha f(x)
 \right| ^p
 \ d\lambda (x)
 \\
-& \leq &
+\leq &
 \int _\Omega \left(
 \int _\Omega \left| D^\alpha f(x)-D^\alpha f (z) \right|
 g_a (x-z)  \ d\lambda (z)
 \right) ^p
 \ d\lambda (x)
 \\
-& \leq &
+\leq &
 \int _\Omega \left(
 \left(
 \int _\Omega \left( \left| D^\alpha f(x)-D^\alpha f (z) \right|
@@ -107,7 +106,7 @@ g_a (x-z)  \ d\lambda (z)
 \right) ^{1\over p}
 \times \right.
 \\
-& &
+&
 \quad
 \times
 \left.
@@ -119,7 +118,7 @@ g_a (x-z)  \ d\lambda (z)
 \right) ^p
 \ d\lambda (x)
 \\
-& = &
+= &
 \int _\Omega
 \int _\Omega \left| D^\alpha f(x)-D^\alpha f (z) \right| ^p
 g_a (x-z) \ d\lambda (z)
@@ -129,25 +128,25 @@ g_a (x-z)   \ d\lambda (z)
 \right) ^{p\over q}
 \ d\lambda (x)
 \\
-& \leq &
+\leq &
 \int _\Omega
 \int _{B_a (0)} \left| D^\alpha f(x)-D^\alpha f (x+y) \right| ^p
 g_a (-y) \ d\lambda (y)
 \ d\lambda (x)
 \\
-& = &
+= &
 \int _{B_a (0)}
 \int _\Omega
 \left| D^\alpha f(x)-D^\alpha f (x+y) \right| ^p
 \ d\lambda (x)
 g_a (y) \ d\lambda (y)
 \\
-& < &
+< &
 \int _{B_a (0)}
 \nu
 g_a (y) \ d\lambda (y)
 =\nu .
-\end{eqnarray*}
+\end{align*}
 
 
 
@@ -171,7 +170,6 @@ Let's say this is our second definition.
 Let's say this is our second theorem.
 
 \end{theorem}
-
 
 
 The block at the end of a proof can be generated like this. \qed
@@ -216,16 +214,16 @@ After compiling twice, the references will be correct.
 
 \begin{itemize}
 \item
-The first theorem is Theorem \ref{th1}.
+The first theorem is Theorem~\ref{th1}.
 
 \item
-The second theorem is Theorem \ref{th2}.
+The second theorem is Theorem~\ref{th2}.
 
 \item
-The first definition is Definition \ref{def1}.
+The first definition is Definition~\ref{def1}.
 
 \item
-The second definition is Definition \ref{def2}.
+The second definition is Definition~\ref{def2}.
 
 \item
 The first enumeration entry is \ref{en1}.
@@ -233,15 +231,18 @@ The first enumeration entry is \ref{en1}.
 \item
 The second enumeration entry is \ref{en2}.
 
+\item
+An entry in the bibliography is \cite{bib1}.
 
 \item
-The an entry in the bibliography is \cite{bib1}.
-
-\item
-The another entry in the bibliography is \cite{bib2}.
+Another entry in the bibliography is \cite{bib2}.
 
 \end{itemize}
 
+{\em Note that when referring to a figure with \verb+\ref{}+ or to
+citations with \verb+\cite{}+, it's often appropriate to use a
+non-breaking space ($\sim$) so that your reference to Theorem \ref{th2} isn't split between lines.
+}
 
 \section{Bad Line and Page Breaks}
 
@@ -251,11 +252,10 @@ sometimes it produces a ``widow" (first line of a paragraph
 alone at the end of a page) or an ``orphan"
 (last line of a paragraph alone at the start of a new page).
 To force a page break, use the
-$\setminus $clearpage command.
-
+\verb+\clearpage+ command.
 
 To force a right-justified line break,\linebreak use the
-$\setminus $linebreak command.
+\verb+\linebreak+ command.
 (But don't spread lines as above. You can see that it looks funny.)
 
 
@@ -269,7 +269,7 @@ Long Subsection Headings
 
 Sometimes a section or subsection heading can be a bit long.
 To accommodate width requirements for headings, 
-use hard carriage returns (``$\setminus \setminus $")
+use hard carriage returns (\verb+\\+)
 to insert line breaks in the heading. These hard carriage returns 
 will also be used in the table of contents, but 
 I was told that that is acceptable. 

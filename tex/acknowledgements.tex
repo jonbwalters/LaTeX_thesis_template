@@ -11,9 +11,15 @@ that I had on hand.
 
 
 If no acknowledgements are desired, comment out
-the lines
-$\setminus $newpage
-and
-$\setminus $include$\{ $acknowledgements$\} $
-in phd\underline{~}thesis.tex.
+the line
+\verb+\include{tex/acknowledgements}+
+in \verb+thesis.tex+.
 
+{\em 
+Note that the above is an example of a margin violation 
+that would need to be fixed manually. \LaTeX \ 
+usually does a good job splitting words correctly between two lines. 
+Issues only arise with words from other languages or with 
+math expressions, verbatim text, and other combinations 
+which normally don't allow line breaks.
+}

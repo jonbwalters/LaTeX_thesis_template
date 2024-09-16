@@ -3,6 +3,7 @@
 %This is the main thesis file. Even though the chapter contents are saved in other files, you must always TeXify %from the main file.
 
 \usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
 \usepackage{setspace}
 \usepackage[mathscr]{eucal}
 \usepackage{wrapfig}
@@ -15,7 +16,9 @@
 \usepackage{color}
 \usepackage{float}
 \usepackage{indentfirst,microtype}
-\usepackage[backend=biber, sorting=none, defernumbers = false, style = ieee]{biblatex}
+\usepackage{booktabs}
+\usepackage{cprotect}
+\usepackage[backend=biber, sorting=none, defernumbers=false, style=ieee]{biblatex}
 \addbibresource{bib.bib}
 
 %Main file to compile the thesis.

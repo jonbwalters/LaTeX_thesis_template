@@ -14,12 +14,16 @@ Similarly, all parts are in the order required by the graduate school and
 the required tables (listing contents, figures, tables)
 are created automatically in the required format. 
 The template is compiled by running \LaTeX \ on 
-the file \verb+thesis.tex+. The only part of 
-\verb+thesis.tex+ that you should change are the
-\verb+\include{...}+ commands: Add more to accommodate all the
-parts of your thesis and comment out those that do not apply. 
+the file \verb+thesis.tex+. The only parts of 
+\verb+thesis.tex+ that you should change are
+\begin{itemize}
+	\item \verb+\include{...}+ commands: Add more to accommodate all the
+	parts of your thesis and comment out those that do not apply. 
+	\item \verb+\usepackage{...}+ commands: to import commands
+	and environments that other people have created.
+\end{itemize}
 
-
+\newpage
 For the actual software,
 \begin{itemize}
 	\item Mik\TeX~\cite{MiKTeX}
@@ -28,12 +32,18 @@ For the actual software,
 	WinEdt asks for a registration fee. 
 	The similar \TeX nicCenter~\cite{TeXnicCenter}
 	is free. 
-	\item Mac\TeX\ is the standard MacOS distribution.
+	\item Mac\TeX~\cite{MacTeX} is the standard MacOS distribution.
 	It comes with the \TeX Shop editor.
-	\item \TeX Live is the standard Linux distribution.
-	\item Overleaf is a convenient web app for hosting your
+	\item \TeX\ Live~\cite{TeXLive} is the standard Linux distribution.
+	\item Overleaf~\cite{overleaf} is a convenient web app for hosting your
 	\TeX projects.
 \end{itemize}
-
 A more thorough introduction to contemporary \LaTeX\ can be
-found in the \LaTeX\ Wikibook.
+found in the \LaTeX\ Wikibook~\cite{Wikibook}.
+
+This document has been configured to use Bib\LaTeX~\cite{biblatex} to
+automatically typeset your bibliography. All you need to do is use
+\verb+\cite{...}+ with a given key from \verb+bib.bib+, and everything
+will be taken care of. I have set it to use IEEE style, but it supports
+a variety of needs. You only need to change the options in 
+\verb+\usepackage[...]{biblatex}+ in \verb+thesis.tex+ to suit your needs.
