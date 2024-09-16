@@ -23,7 +23,8 @@ remake:
 	make
 	
 clean:
-	rm -f $(document).pdf $(build)/*
+	rm -f ./build/tex/*
+	rm -df $(document).pdf ./build/*
 
 cleanbib:
 	biber --cache | rm -rf
