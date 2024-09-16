@@ -9,15 +9,16 @@
 
 \begin{itemize}
 \item
-When printing from a pdf, you {\bf must select the option
-``Page scaling: None."} Otherwise Adobe will be ``helpful" and
-mess up all margins. Printing from a dvi or printing pdfs
-at office services is safe.
+When printing from a pdf from Adobe, you {\bf must select the option
+``Page scaling: None."} otherwise Adobe will be ``helpful" and
+mess up all margins.
 
 \item
-To create a pdf, use a dvi$\to $pdf conversion, not pdf\LaTeX, which is a
-different compiler.
-
+This document uses features only availables to PDFs,
+so pdfLaTeX or some other pdf-first compiler is prefered.
+If you use XeLaTeX or LuaLaTeX you will likely need to
+change some of the packages loaded in \verb+LA_Tech.cls+ and in
+\verb+thesis.tex+.
 
 \item
 Check for ``widows," ``orphans," and words that spill into the margin.
@@ -135,7 +136,6 @@ English spelling, grammar, punctuation, etc.
 
 \item
 {\em Gross} infractions on the placement and spacing of figures.
-
 Because of the way \LaTeX \ imports and creates images,
 the distance between a figure and its caption can vary slightly.
 Large white spaces should be flagged, though.
