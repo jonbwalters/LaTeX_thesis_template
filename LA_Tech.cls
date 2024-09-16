@@ -10,6 +10,7 @@
 \usepackage[labelfont=bf]{caption} %For bold label for figures and tables (for indented captions, use the "hang" option.
 \usepackage[calcwidth]{titlesec}
 \usepackage{fancyhdr}
+\usepackage{indentfirst,microtype}
 
 %% Additional TeX/LaTeX code...
 
