@@ -53,6 +53,28 @@
 	\end{oldenumerate}%
 }
 
+\let\oldfigure=\figure
+\let\endoldfigure=\endfigure
+\renewenvironment{figure}{%
+	\begin{oldfigure}%
+}%
+{%
+	\vspace{-12pt}
+	\end{oldfigure}%
+}
+
+\let\oldtable=\table
+\let\endoldtable=\endtable
+\renewenvironment{table}{%
+	\begin{oldtable}%
+}%
+{%
+	\vspace{-12pt}
+	\end{oldtable}%
+}
+
+
+\renewcommand{\baselinestretch}{2.0}
 \setlength{\parskip}{0in}
 \setlength{\parindent}{0.5in}
 \setlength{\textwidth}{6in}% 8.5 - 1in - 1.5in = 6in
@@ -72,8 +94,10 @@
 \setlength{\voffset}{-0.5in}
 \setlength{\topmargin}{0pt}
 
-\setlength{\intextsep}{24pt plus 2pt minus 4pt}
-\setlength{\belowcaptionskip}{-4pt}
+\setlength{\intextsep}{24pt}
+\setlength{\belowcaptionskip}{0em}
+%\setlength{\abovecaptionskip}{0em}
+%\setlength{\floatsep}{1em plus 2pt minus 2pt}
 
 \newlength{\SpaceBeforeChapter}
 \setlength{\SpaceBeforeChapter}{0.55in}
