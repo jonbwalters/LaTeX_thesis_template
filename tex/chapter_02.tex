@@ -35,23 +35,21 @@ indentations don't match up.
 
 \begin{itemize}
 \item
-In-text math mode: $\int _0 ^1 x^2 dx = {1\over 3} .$
-
-
+In-text math mode: $\int _0 ^1 x^2 dx = {1\over 3}$.
 
 \item
 Display  math mode:
 {\em
-To assure the proper spacing, the \$ \$ $\cdots $ \$ \$
-environment
+To assure the proper spacing, the \verb+$$...$$+ environment
 must start on the line {\bf immediately} after the preceding text.}
-$$\int _0 ^1 x^2 dx = {1\over 3} .$$
+$$\int _0 ^1 x^2 dx = {1\over 3}$$
 
 \item
-Display within text math mode: $\displaystyle{ \int _0 ^1 x^2 dx = {1\over 3} .} $
+Display within text math mode: 
+$\displaystyle{ \int _0 ^1 x^2 dx = {1\over 3} } $
 
 \item
-And here is how we line up equalities (equation array).
+And here is how we line up equalities.
 {\em To assure the proper spacing, the \verb+\begin{align*}+
 must be on the line {\bf immediately} after the preceding text.}
 \begin{align*}
@@ -70,9 +68,6 @@ Note that delimiters like braces can be automatically adjusted to the right size
 by using the \verb+\left+ and \verb+\right+ commands.
 The above shows that the delimiters themselves need not match in shape and
 that a period gives an unprinted dummy delimiter.
-
-
-
 
 Align also works when things get ugly:
 \begin{align*}
@@ -148,13 +143,19 @@ g_a (y) \ d\lambda (y)
 =\nu .
 \end{align*}
 
+\newpage
 
+When you need an equation to be numbered, use the \verb+equation+ environment
+\begin{equation}\label{fourier}
+	F(\omega) = \int_{-\infty}^\infty f(t) e^{-i\omega t}dt
+\end{equation}
+
+Similarly the \verb+align+ environment will number each line. Adding \verb+*+
+suppresses numbering.
 
 
 
 \section{Next Section Title}
-
-
 
 \begin{definition}
 \label{def2}
@@ -163,7 +164,6 @@ Let's say this is our second definition.
 
 \end{definition}
 
-
 \begin{theorem}
 \label{th2}
 
@@ -171,8 +171,8 @@ Let's say this is our second theorem.
 
 \end{theorem}
 
-
 The block at the end of a proof can be generated like this. \qed
+
 
 
 \section{Enumeration and Itemization}
@@ -226,6 +226,9 @@ The first definition is Definition~\ref{def1}.
 The second definition is Definition~\ref{def2}.
 
 \item
+The Fourier Transform is Equation~\ref{fourier}
+
+\item
 The first enumeration entry is \ref{en1}.
 
 \item
@@ -244,8 +247,8 @@ citations with \verb+\cite{}+, it's often appropriate to use a
 non-breaking space ($\sim$) so that your reference to Theorem \ref{th2} isn't split between lines.
 }
 
-\section{Bad Line and Page Breaks}
 
+\section{Bad Line and Page Breaks}
 
 Although \LaTeX \ is designed to produce pages that look good,
 sometimes it produces a ``widow" (first line of a paragraph
