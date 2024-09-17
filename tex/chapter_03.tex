@@ -15,13 +15,13 @@ A double space should separate the figure from paragraph text
 above or below it, which is done in Figure \ref{pg1}.
 
 \begin{figure}[htb]
-\centering
-\input{figs/petersen_graph_with_bottom.pic}
-\caption{
-The line in the figure above is at height $y=0$ in \TeX CAD.
-Note that \LaTeX \ automatically typesets captions single-spaced.
-}
-\label{pg1}
+	\centering
+	\input{figs/petersen_graph_with_bottom.pic}
+	\caption{
+	The line in the figure above is at height $y=0$ in \TeX CAD.
+	Note that \LaTeX \ automatically typesets captions single-spaced.
+	}
+	\label{pg1}
 \end{figure}
 
 There will be more white space between the ``bottom" of the figure and
@@ -30,20 +30,19 @@ Figure \ref{pg3} shows how items that are placed too high can
 distort the distance between the image and the caption.
 I've configured the float spacing to get appropriate results
 --- doublespace between the float and surrounding paragraphs --- but
-if it gives you trouble then use \verb+\vspace{}+ to add or subtract
+if you have trouble then use \verb+\vspace{}+ to add or subtract
 vertical space.
 
 \begin{figure}[htb]
-\centering
-\input{figs/petersen_graph_high.pic}
-\caption{If your figure has some white space above the unseen actual border,
-like this one, only less extreme, please make a note on the printout that
-goes to the proofreader. Without the line on the bottom and the text,
-this figure would not be acceptable (too much white space).
-Disclaimer: This is an example of a {\bf bad} figure with too much
-white space between content and bounding box.}
-\label{pg3}
-
+	\centering
+	\input{figs/petersen_graph_high.pic}
+	\caption{If your figure has some white space above the unseen actual border,
+	like this one, only less extreme, please make a note on the printout that
+	goes to the proofreader. Without the line on the bottom and the text,
+	this figure would not be acceptable (too much white space).
+	Disclaimer: This is an example of a {\bf bad} figure with too much
+	white space between content and bounding box.}
+	\label{pg3}
 \end{figure}
 
 
@@ -59,39 +58,30 @@ which is in accordance with technical writing rules.
 This is how Figures \ref{pg1} and \ref{pg3} were placed.
 
 Most picture formats can be imported. In Figure~\ref{batgull2},
-the default distance between the bottom of the picture and the
-caption is different than when a picture environment was imported
-and the distance was corrected with the \verb+\vspace+ command.
-
-
+eps files were used because this template was originally made with
+output to dvi files in mind, but since it's assumed you'll output
+straight to pdf you can use any standard image file type.
 
 \begin{figure}[hbt] %% figure
-\begin{center}
-\includegraphics[width=.45\linewidth]{figs/bat_b.eps}\hspace*{0.04in}
-\includegraphics[width=.36\linewidth]{figs/gull2_b.eps}\\
-\end{center}
-\vspace{-.1in}
-
-\caption
-{
-Note how a picture that was created or imported differently has a different
-space between caption and image than the line drawing in Figure
-\protect\ref{pg1}. (Left) Bat flight is being studied as part of an
-Air Force Office of Scientific Research Multidisciplinary
-University Research Initiative project.
-Image credit: mime.oregonstate.edu/news/story/2103, (Right)
-Morphing gull wings.
-{\em Note how the URL spills too far to the right in the
-list of figures. This type of margin infraction must be
-corrected manually.}}
-\label{batgull2}
+	\centering
+	\includegraphics[width=.45\linewidth]{figs/bat_b.eps}\hspace*{0.04in}
+	\includegraphics[width=.36\linewidth]{figs/gull2_b.eps}\\
+	\caption{
+	Note how a picture that was created or imported differently has a different
+	space between caption and image than the line drawing in Figure
+	\protect\ref{pg1}. (Left) Bat flight is being studied as part of an
+	Air Force Office of Scientific Research Multidisciplinary
+	University Research Initiative project.
+	Image credit: mime.oregonstate.edu/news/story/2103, (Right)
+	Morphing gull wings.
+	{\em Note how the URL spills too far to the right in the
+	list of figures. This type of margin infraction must be
+	corrected manually.}}
+	\label{batgull2}
 \end{figure}
 
-
-
 Note that imported pictures that have white space on their margins
-will look
-as if they are placed incorrectly. For such pictures,
+will look as if they are placed incorrectly. For such pictures,
 make a note on the printout that goes to format checking.
 
 
@@ -132,8 +122,6 @@ T  & T  & T  \\
 For tables, the title is to be placed above the table,
 which is done by putting the \verb+\caption+ command
 above the table.
-To get enough space between the caption and the table,
-use \verb+\vspace{12pt}+ to add space.
 For professional-looking tables, you'll want to minimize
 the number of lines used as done in Table~\ref{tablelabel2}.
 
