@@ -95,7 +95,7 @@ as if they are placed incorrectly. For such pictures,
 make a note on the printout that goes to format checking.
 
 
-
+\newpage
 \section{Tables}
 
 Tables pretty much act like figures. Table~\ref{tablelabel}
@@ -110,7 +110,6 @@ comment out the \verb+\include{tables}+ command in
 list of figures. This type of margin infraction must be
 corrected manually.}
 }
-\vspace{12pt}
 \label{tablelabel}
 \centerline{
 \begin{tabular}{|l|l|r|}
@@ -139,27 +138,27 @@ For professional-looking tables, you'll want to minimize
 the number of lines used as done in Table~\ref{tablelabel2}.
 
 \begin{table}[h]
-\caption{Another sample table and another fun rule:
-Entries in the list of tables/figures
-should have at least 3 dots in the dotted
-line between entry and page number. Unless there is
-an unfortunate spill, which would need to be fixed anyway,
-\LaTeX \ should do this automatically.
-}
-\label{tablelabel2}
-\vspace{12pt}
-\centering
-\begin{tabular}{l l  r}
-\toprule
-$p$ & $q$ & $p\Rightarrow q$ \\
-\midrule
-F   & F   & T \\
-F   & T  & T \\
-T  & F   & F  \\
-T  & T  & T  \\
-\bottomrule
-\end{tabular}
+	\caption{Another sample table and another fun rule:
+	Entries in the list of tables/figures
+	should have at least 3 dots in the dotted
+	line between entry and page number. Unless there is
+	an unfortunate spill, which would need to be fixed anyway,
+	\LaTeX \ should do this automatically.
+	}
+	\label{tablelabel2}
+	\centering
+	\begin{tabular}{l l  r}
+	\toprule
+	$p$ & $q$ & $p\Rightarrow q$ \\
+	\midrule
+	F   & F   & T \\
+	F   & T  & T \\
+	T  & F   & F  \\
+	T  & T  & T  \\
+	\bottomrule
+	\end{tabular}
 \end{table}
+Showing here that the skip after a table is reasonable too.
 
 \section{Note on Sections}
 
