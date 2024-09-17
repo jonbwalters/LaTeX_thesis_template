@@ -83,14 +83,13 @@ will look as if they are placed incorrectly. For such pictures,
 make a note on the printout that goes to format checking.
 
 
-\newpage
 \section{Tables}
 
 Tables pretty much act like figures. Table~\ref{tablelabel}
 is an example of a small table.
 
 
-\begin{table}[h]
+\begin{table}[hbt]
 \cprotect\caption{A sample table. If there are no tables,
 comment out the \verb+\include{tables}+ command in
 \verb+thesis.tex+.
@@ -123,7 +122,7 @@ above the table.
 For professional-looking tables, you'll want to minimize
 the number of lines used as done in Table~\ref{tablelabel2}.
 
-\begin{table}[h]
+\begin{table}[hbt]
 	\caption{Another sample table and another fun rule:
 	Entries in the list of tables/figures
 	should have at least 3 dots in the dotted
@@ -144,7 +143,30 @@ the number of lines used as done in Table~\ref{tablelabel2}.
 	\bottomrule
 	\end{tabular}
 \end{table}
-Showing here that the skip after a table is reasonable too.
+
+More advanced tables might have parts than span multiple
+columns. \LaTeX\ has a command to take care of this
+with \verb+\multicolumn+, which is used in Table~\ref{multi}.
+The command \verb+\multirow+ works similarly and can be accessed
+with the package \verb+multirow+.
+
+\begin{table}[hbt]
+	\caption{A table with multicolumn and multirow spans.
+	}
+	\label{multi}
+	\centering
+	\begin{tabular}{l l  r}
+	\toprule
+	\multicolumn{2}{c}{Inputs} & \multicolumn{1}{c}{Output}\\
+	$p$ & $q$ & $p\Rightarrow q$ \\
+	\midrule
+	F   & F   & T \\
+	F   & T  & T \\
+	T  & F   & F  \\
+	T  & T  & T  \\
+	\bottomrule
+	\end{tabular}
+\end{table}
 
 \section{Note on Sections}
 
