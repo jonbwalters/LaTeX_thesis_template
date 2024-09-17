@@ -23,18 +23,35 @@
 \AtBeginDocument{\setlength\abovedisplayskip{3pt}}
 \AtBeginDocument{\setlength\belowdisplayskip{3pt}}
 
-\renewcommand{\cfttoctitlefont}{\large\bfseries}
-\renewcommand{\cftloftitlefont}{\large\bfseries}
-\renewcommand{\cftlottitlefont}{\large\bfseries}
-\setlength{\cftbeforeloftitleskip}{42pt}
-\setlength{\cftafterloftitleskip}{12pt}
-\setlength{\cftbeforepartskip}{0pt}
-\setlength{\cftbeforechapskip}{0pt}
-\setlength{\cftbeforesecskip}{0pt}
-\setlength{\cftbeforesubsecskip}{0pt}
+\let\olditemize=\itemize
+\let\endolditemize=\enditemize
+\renewenvironment{itemize}{%
+	\vspace{-.15in} %hard codes the vertical space before the environment
+	\begin{olditemize}%
+		\setlength{\parsep}{0ex}
+		\setlength{\topsep}{0ex}
+		\setlength{\partopsep}{0ex}
+		\setlength{\parskip}{0pt}%
+		\setlength{\itemsep}{0pt}%
+}%
+{%
+	\end{olditemize}%
+}
 
-\newcommand*{\noaddvspace}{\renewcommand*{\addvspace}[1]{}}
-\addtocontents{lof}{\protect\noaddvspace}
+\let\oldenumerate=\enumerate
+\let\endoldenumerate=\endenumerate
+\renewenvironment{enumerate}{%
+\vspace{-.15in} %hard codes the vertical space before the environment
+	\begin{oldenumerate}%
+		\setlength{\parsep}{0ex}
+		\setlength{\topsep}{0ex}
+		\setlength{\partopsep}{0ex}
+		\setlength{\parskip}{0pt}%
+		\setlength{\itemsep}{0pt}%
+}%
+{%
+	\end{oldenumerate}%
+}
 
 \setlength{\parskip}{0in}
 \setlength{\parindent}{0.5in}
@@ -78,8 +95,19 @@
 %spacing for subsubsections
 \titlespacing{\subsubsection}{0pt}{3pt}{0ex}
 
+% using caption....................................................
 \captionsetup[table]{singlelinecheck=off}
 
+% Using toclft.................................................
+\renewcommand{\cfttoctitlefont}{\large\bfseries}
+\renewcommand{\cftloftitlefont}{\large\bfseries}
+\renewcommand{\cftlottitlefont}{\large\bfseries}
+\setlength{\cftbeforeloftitleskip}{42pt}
+\setlength{\cftafterloftitleskip}{12pt}
+\setlength{\cftbeforepartskip}{0pt}
+\setlength{\cftbeforechapskip}{0pt}
+\setlength{\cftbeforesecskip}{0pt}
+\setlength{\cftbeforesubsecskip}{0pt}
 
 \renewcommand{\cftpartfont}{\normalfont}
 \renewcommand{\cftpartpagefont}{\normalfont}
@@ -102,40 +130,13 @@
 \setlength{\cftchapindent}{0pt}
 \setlength{\cftfigindent}{0pt}
 \setlength{\cfttabindent}{0pt}
+
+\newcommand*{\noaddvspace}{\renewcommand*{\addvspace}[1]{}}
+\addtocontents{lof}{\protect\noaddvspace}
+
 \addtocontents{lof}{\protect\noaddvspace}
 \addtocontents{lot}{\protect\noaddvspace}
 
-\renewcommand{\baselinestretch}{2.0}
-
-\let\olditemize=\itemize
-\let\endolditemize=\enditemize
-\renewenvironment{itemize}{%
-	\vspace{-.15in} %hard codes the vertical space before the environment
-	\begin{olditemize}%
-		\setlength{\parsep}{0ex}
-		\setlength{\topsep}{0ex}
-		\setlength{\partopsep}{0ex}
-		\setlength{\parskip}{0pt}%
-		\setlength{\itemsep}{0pt}%
-}%
-{%
-	\end{olditemize}%
-}
-
-\let\oldenumerate=\enumerate
-\let\endoldenumerate=\endenumerate
-\renewenvironment{enumerate}{%
-\vspace{-.15in} %hard codes the vertical space before the environment
-	\begin{oldenumerate}%
-		\setlength{\parsep}{0ex}
-		\setlength{\topsep}{0ex}
-		\setlength{\partopsep}{0ex}
-		\setlength{\parskip}{0pt}%
-		\setlength{\itemsep}{0pt}%
-}%
-{%
-	\end{oldenumerate}%
-}
 
 % using fancyhdr ............................................
 \pagestyle{fancy}
