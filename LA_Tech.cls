@@ -41,7 +41,7 @@
 \let\oldenumerate=\enumerate
 \let\endoldenumerate=\endenumerate
 \renewenvironment{enumerate}{%
-\vspace{-.15in} %hard codes the vertical space before the environment
+	\vspace{-.15in} %hard codes the vertical space before the environment
 	\begin{oldenumerate}%
 		\setlength{\parsep}{0ex}
 		\setlength{\topsep}{0ex}
