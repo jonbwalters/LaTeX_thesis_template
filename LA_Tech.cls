@@ -12,7 +12,8 @@
 \usepackage{fancyhdr}
 \usepackage{indentfirst,microtype}
 \usepackage{amsmath}
-
+\usepackage[absolute]{textpos}
+\usepackage{setspace}
 %% Additional TeX/LaTeX code...
 
 %This is to avoid widows, orphans, and hypenations at the end of a page.
@@ -183,5 +184,55 @@
 \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
 \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
 \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+
+
+% Redefining \maketitle....................................
+\setlength{\lineskip}{14pt}
+\newcommand*{\project}[1]{\gdef\@project{#1}%
+}
+\newcommand*{\@project}{Final Year Project}
+\newcommand*{\previousdegree}[1]{\gdef\@degree{#1}%
+}
+\newcommand*{\@college}{Enter college}
+\newcommand*{\college}[1]{\gdef\@college{#1}%
+}
+\newcommand*{\@degree}{Previous degree(s)}
+\newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}%
+}
+\newcommand*{\@supervisor}{\texttt{\string\supervisor} currently
+not set. Please fix this.}
+\renewcommand*{\maketitle}{%
+	\begin{titlepage}
+	\textblockorigin{1.5in}{1in}
+	\centering
+
+	\vspace*{4\lineskip}
+	{ \normalsize \textbf{
+		\@title
+	}\par}
+	by\\
+	{\@author\unskip, \@degree\strut\par}
+	
+	\begin{textblock*}{\textwidth}(0pt, 29\lineskip)
+		\begin{singlespace}%
+		A Dissertation Presented in Partial Fulfillment \\
+		of the Requirements for the Degree \\
+		{\@project\unskip\strut}
+		\end{singlespace}
+	\end{textblock*}
+
+	\begin{textblock*}{\textwidth}(0pt, 39\lineskip)
+		\begin{singlespace}
+		COLLEGE OF \@college\\
+		LOUISIANA TECH UNIVERSITY
+		\end{singlespace}
+	\end{textblock*}
+	
+	\begin{textblock*}{\textwidth}(0pt, 44\lineskip)
+		\@date
+	\end{textblock*}
+	
+	\end{titlepage}
+}
 
 \endinput
