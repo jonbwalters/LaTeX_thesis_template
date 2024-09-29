@@ -25,27 +25,30 @@
 \AtBeginDocument{\setlength\abovedisplayskip{3pt}}
 \AtBeginDocument{\setlength\belowdisplayskip{3pt}}
 
+% Manually adjusting the spacing before and after floats to work well with
+% double spacing
+\setlength{\intextsep}{0pt}
+\setlength{\belowcaptionskip}{0pt}
 
 \let\oldfigure=\figure
 \let\endoldfigure=\endfigure
 \renewenvironment{figure}{%
+	\vspace{0.65\baselineskip}
 	\begin{oldfigure}%
 }%
 {%
-	\vspace{-12pt}
 	\end{oldfigure}%
 }
 
 \let\oldtable=\table
 \let\endoldtable=\endtable
 \renewenvironment{table}{%
+	\vspace{0.6\baselineskip}
 	\begin{oldtable}%
 }%
 {%
-	\vspace{-12pt}
 	\end{oldtable}%
 }
-
 
 % Paragraph formatting..................................
 % double spacing
@@ -72,10 +75,6 @@
 \setlength{\voffset}{-0.5in}
 \setlength{\topmargin}{0pt}
 
-\setlength{\intextsep}{24pt}
-\setlength{\belowcaptionskip}{0em}
-%\setlength{\abovecaptionskip}{0em}
-%\setlength{\floatsep}{1em plus 2pt minus 2pt}
 
 % Header formatting..........................................
 \newlength{\SpaceBeforeChapter}
