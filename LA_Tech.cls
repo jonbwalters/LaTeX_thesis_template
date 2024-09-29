@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{LA_Tech}[2011/12/23 My Class]
+\ProvidesClass{LA_Tech}
 
 %% Load base
 \LoadClass[12pt]{report}
@@ -47,9 +47,14 @@
 }
 
 
+% Paragraph formatting..................................
+% double spacing
 \renewcommand{\baselinestretch}{2.0}
 \setlength{\parskip}{0in}
+% first line indent
 \setlength{\parindent}{0.5in}
+
+% Margins.............................................
 \setlength{\textwidth}{6in}% 8.5 - 1in - 1.5in = 6in
 \setlength{\textheight}{9in}% 11 - 1in - 1in = 9in
 % The height of the header
@@ -72,18 +77,29 @@
 %\setlength{\abovecaptionskip}{0em}
 %\setlength{\floatsep}{1em plus 2pt minus 2pt}
 
+% Header formatting..........................................
 \newlength{\SpaceBeforeChapter}
 \setlength{\SpaceBeforeChapter}{0.55in}
 
-% To create triple spacing, we use single spacing, then add 3ex to create triple spacing ~ there may be a more correct way to do this
-\titleformat{\chapter}[display]{\singlespacing\centering\large\bfseries}{\MakeUppercase{\chaptertitlename}~\thechapter}{4ex}{\setlength{\parskip}{0pt}\large\uppercase}[\setlength{\parskip}{0pt}]%{0pt}]
+% To create triple spacing, we use single spacing,
+% then add 3ex to create triple spacing
+% ~ there may be a more correct way to do this
+\titleformat{\chapter}[display]
+	{\singlespacing\centering\large\bfseries}
+	{\MakeUppercase{\chaptertitlename}~\thechapter}
+	{4ex}{\setlength{\parskip}{0pt}\large\uppercase}
+	[\setlength{\parskip}{0pt}]
 \titlespacing{\chapter}{0pt}{\SpaceBeforeChapter}{2.5ex}
 
-% Section headers should have a triple space before them (3ex), and a double space after (2ex)
-\titleformat{\section}[block]{\singlespacing\centering\normalsize\bfseries}{\thetitle}{1ex}{\normalsize}
+% Section headers should have a triple space before them (3ex),
+% and a double space after (2ex)
+\titleformat{\section}[block]
+	{\singlespacing\centering\normalsize\bfseries}
+	{\thetitle}{1ex}{\normalsize}
 \titlespacing{\section}{0pt}{3ex}{0ex}
 
-% Subsection headers should have a double space before them (2ex), and a double space after (2ex)
+% Subsection headers should have a double space before them (2ex),
+% and a double space after (2ex)
 % And they should not be centered
 \titleformat{\subsection}{\singlespacing\normalsize\bfseries}{\thetitle}{1ex}{}
 \titlespacing{\subsection}{0pt}{3pt}{0ex}
