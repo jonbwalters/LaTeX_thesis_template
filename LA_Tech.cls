@@ -14,6 +14,7 @@
 \usepackage{amsmath}
 \usepackage[absolute]{textpos}
 \usepackage{setspace}
+\usepackage{enumitem}
 %% Additional TeX/LaTeX code...
 
 %This is to avoid widows, orphans, and hypenations at the end of a page.
@@ -24,35 +25,6 @@
 \AtBeginDocument{\setlength\abovedisplayskip{3pt}}
 \AtBeginDocument{\setlength\belowdisplayskip{3pt}}
 
-\let\olditemize=\itemize
-\let\endolditemize=\enditemize
-\renewenvironment{itemize}{%
-	\vspace{-.15in} %hard codes the vertical space before the environment
-	\begin{olditemize}%
-		\setlength{\parsep}{0ex}
-		\setlength{\topsep}{0ex}
-		\setlength{\partopsep}{0ex}
-		\setlength{\parskip}{0pt}%
-		\setlength{\itemsep}{0pt}%
-}%
-{%
-	\end{olditemize}%
-}
-
-\let\oldenumerate=\enumerate
-\let\endoldenumerate=\endenumerate
-\renewenvironment{enumerate}{%
-	\vspace{-.15in} %hard codes the vertical space before the environment
-	\begin{oldenumerate}%
-		\setlength{\parsep}{0ex}
-		\setlength{\topsep}{0ex}
-		\setlength{\partopsep}{0ex}
-		\setlength{\parskip}{0pt}%
-		\setlength{\itemsep}{0pt}%
-}%
-{%
-	\end{oldenumerate}%
-}
 
 \let\oldfigure=\figure
 \let\endoldfigure=\endfigure
@@ -185,6 +157,8 @@
 \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
 \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
 
+% Using enumitem...........................................
+\setlist{nosep}
 
 % Redefining \maketitle....................................
 \newcommand*{\project}[1]{\gdef\@project{#1}%
