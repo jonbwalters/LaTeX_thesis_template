@@ -187,7 +187,6 @@
 
 
 % Redefining \maketitle....................................
-\setlength{\lineskip}{14pt}
 \newcommand*{\project}[1]{\gdef\@project{#1}%
 }
 \newcommand*{\@project}{Final Year Project}
@@ -203,6 +202,7 @@
 not set. Please fix this.}
 \renewcommand*{\maketitle}{%
 	\begin{titlepage}
+	\setlength{\lineskip}{14pt}
 	\textblockorigin{1.5in}{1in}
 	\centering
 
