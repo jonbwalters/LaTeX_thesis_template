@@ -121,7 +121,10 @@ which is done by putting the \verb+\caption+ command
 above the table.
 For professional-looking tables, you'll want to minimize
 the number of lines used as done in Table~\ref{tablelabel2}.
-
+In addition, this table uses \verb+\toprule+, \verb+\midrule+,
+and \verb+\bottomrule+ from the package \verb+booktabs+. These
+have improved vertical spacing over the built-in \verb+\hline+
+and pleasantly split vertical lines.
 \begin{table}[hbt]
 	\caption{Another sample table and another fun rule:
 	Entries in the list of tables/figures
@@ -132,7 +135,7 @@ the number of lines used as done in Table~\ref{tablelabel2}.
 	}
 	\label{tablelabel2}
 	\centering
-	\begin{tabular}{l l  r}
+	\begin{tabular}{l l | r}
 	\toprule
 	$p$ & $q$ & $p\Rightarrow q$ \\
 	\midrule
@@ -151,7 +154,7 @@ The command \verb+\multirow+ works similarly and can be accessed
 with the package \verb+multirow+.
 
 \begin{table}[hbt]
-	\caption{A table with multicolumn and multirow spans.
+	\caption{A table with a multicolumn span
 	}
 	\label{multi}
 	\centering
