@@ -49,6 +49,15 @@
 {%
 	\end{oldtable}%
 }
+\let\oldequation=\equation
+\let\endoldequation=\endequation
+\renewenvironment{equation}{%
+	\begin{oldequation}%
+	\renewcommand*{\arraystretch}{0.5}
+}%
+{%
+	\end{oldequation}%
+}
 
 % Paragraph formatting..................................
 % double spacing
