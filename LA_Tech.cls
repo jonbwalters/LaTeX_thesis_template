@@ -116,9 +116,6 @@
 %spacing for subsubsections
 \titlespacing{\subsubsection}{0pt}{3pt}{0ex}
 
-% using caption....................................................
-\captionsetup[table]{singlelinecheck=off}
-
 % Using toclft.................................................
 \renewcommand{\cfttoctitlefont}{\large\bfseries}
 \renewcommand{\cftloftitlefont}{\large\bfseries}
