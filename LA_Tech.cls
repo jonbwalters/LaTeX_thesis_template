@@ -44,19 +44,11 @@
 \let\endoldtable=\endtable
 \renewenvironment{table}{%
 	\vspace{0.6\baselineskip}
+	\renewcommand*{\arraystretch}{1}
 	\begin{oldtable}%
 }%
 {%
 	\end{oldtable}%
-}
-\let\oldequation=\equation
-\let\endoldequation=\endequation
-\renewenvironment{equation}{%
-	\begin{oldequation}%
-	\renewcommand*{\arraystretch}{0.5}
-}%
-{%
-	\end{oldequation}%
 }
 
 % Paragraph formatting..................................
@@ -65,6 +57,7 @@
 \setlength{\parskip}{0in}
 % first line indent
 \setlength{\parindent}{0.5in}
+\renewcommand*{\arraystretch}{0.5}
 
 % Margins.............................................
 \setlength{\textwidth}{6in}% 8.5 - 1in - 1.5in = 6in
