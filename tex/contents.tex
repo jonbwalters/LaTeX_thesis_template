@@ -1,8 +1,6 @@
-% this contains:
-% contents
+%%%%%%%%% table of contents %%%%%%%%%%
 %DO NOT CHANGE IT.
-% table of contents
-%
+
 \begin{singlespace}
 % This configures the space before the title
 \renewcommand{\cftbeforetoctitleskip}{.6in}
@@ -24,18 +22,13 @@
 
 
 
-% this contains:
-% list of tables
+
+%%%%%%%%% list of tables %%%%%%%%%%%
 %DO NOT CHANGE IT.
 
-
 \newpage
-
-% lists of figures and tables
+\phantomsection % Required for hyperref to work. Could use tocbibind package, but jumps below heading
 \addcontentsline{toc}{chapter}{LIST OF TABLES}
-
-
-%%%\singlespacing
 % This configures the space before the title
 \renewcommand{\cftbeforelottitleskip}{.6in}
 % this configures the space after the title
@@ -72,12 +65,12 @@ and for Figure~\ref{batgull2} on the next page.
 \noindent Also, you shouldn't forget to delete this note from \verb+tex/contents.tex+.
 %%%%%%%%%%%%%%% Delete this %%%%%%%%%%%%%%%%%%%
 
-% this contains:
-% list of figures 
+%%%%%%%%%% list of figures %%%%%%%%%%%%
 %DO NOT CHANGE IT.
 
 
 \newpage
+\phantomsection
 \addcontentsline{toc}{chapter}{LIST OF FIGURES}
 % This configures the space before the title
 \renewcommand{\cftbeforeloftitleskip}{.6in}
