@@ -52,17 +52,19 @@
 
 \begin{document}
 	\scrollmode
+	\hypersetup{pageanchor=false}
 	\include{tex/nagging.tex}
-	
-	\setcounter{page}{0}
-	
-	\pagenumbering{roman}
 	\thispagestyle{empty}
 	
 	\maketitle
+	
 	\thispagestyle{empty}
 	Replace this page with the Signature Page.
 	
+	\hypersetup{pageanchor=true}
+	
+	\pagenumbering{roman}
+	\setcounter{page}{1}	
 	\include{tex/abstract}
 	
 	\thispagestyle{empty}
