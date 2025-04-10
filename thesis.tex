@@ -3,6 +3,7 @@
 % This is the main thesis file. Even though the chapter contents are
 % saved in other files, you must always TeXify from the main file.
 
+% Remove and add these packages as you please
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{mathtools}
 \usepackage[mathscr]{eucal}
@@ -17,6 +18,9 @@
 \usepackage{float}
 \usepackage{booktabs}
 \usepackage{cprotect}
+
+% You may need to change the options here to get the behavior you want
+% for your bibliography and citations.
 \usepackage[backend=biber, sorting=none, defernumbers=false, style=ieee]{biblatex}
 \addbibresource{bib.bib}
 
@@ -24,11 +28,9 @@
 %\captionsetup[table]{singlelinecheck=off} % If you always have full-width tables, 
                                            % then you might want this
 
-%Main file to compile the thesis.
-%DO NOT CHANGE THIS FILE, EXCEPT FOR THE INCLUDE COMMANDS
-
 \allowdisplaybreaks
 
+% You may modify these as you please
 \newcommand{\ds}{\displaystyle}
 \newcommand{\p}{\partial}
 \newcommand{\R}{\text{I\!R}}
@@ -40,6 +42,7 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{algorithm}{Algorithm}
 
+% Insert your information here
 \title{
 	THESIS TITLE GOES HERE IN CAPITAL LETTERS, SPLIT FOR \\
 	INVERTED PYRAMID FORM
@@ -50,6 +53,9 @@
 \project{Master/PhD of}
 \college{\uppercase{Engineering and Science}}
 
+
+%Main file to compile the thesis.
+%DO NOT CHANGE THIS FILE, EXCEPT FOR THE INCLUDE COMMANDS
 \begin{document}
 	\scrollmode
 	\hypersetup{pageanchor=false}
