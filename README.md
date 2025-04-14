@@ -4,4 +4,4 @@ The files in this package constitute the Louisiana Tech LaTeX thesis template th
 
 Typesetting in LaTeX takes a little getting used to, but not too much. Recompile the file `thesis.tex` to get a first idea how to use LaTeX, and read the document along with the source code.
 
-For issues with the template, contact Dr. Jonathan Walters. If you want to suggest a fix, feel free to make a pull request!
+If you want to suggest a fix or point out an issue, feel free to make a pull request or reach out to Dr. Jonathan Walters!
