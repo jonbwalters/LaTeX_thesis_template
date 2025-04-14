@@ -23,6 +23,7 @@
 % for your bibliography and citations.
 \usepackage[backend=biber, sorting=none, defernumbers=false, style=ieee]{biblatex}
 \addbibresource{bib.bib}
+\patchcmd{\bibsetup}{\interlinepenalty=5000}{\interlinepenalty=10000}{}{} % no break of entry
 
 % Uncomment to enable
 %\captionsetup[table]{singlelinecheck=off} % If you always have full-width tables, 
