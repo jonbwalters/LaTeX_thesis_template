@@ -29,29 +29,27 @@ mistakes until it's time to submit your thesis, at which point you can
 fix them manually.
 
 \newpage
-For the actual software,
+\LaTeX\ has a variety of distributions for various platforms.
+These will manage all the packages, \TeX\ engines, and utility programs for you.
 \begin{itemize}
-	\item Mik\TeX~\cite{MiKTeX}
-	is a standard \LaTeX\ distribution for Windows and
-	WinEdt~\cite{WinEdt} is a standard front end.
-	WinEdt asks for a registration fee. 
-	The similar \TeX nicCenter~\cite{TeXnicCenter}
-	is free. 
+	\item Mik\TeX~\cite{MiKTeX} is the standard \LaTeX\ distribution for Windows and WinEdt~\cite{WinEdt} is a standard front end.
+	WinEdt asks for a registration fee, but \TeX nicCenter~\cite{TeXnicCenter} is free. 
 	\item Mac\TeX~\cite{MacTeX} is the standard MacOS distribution.
 	It comes with the \TeX Shop editor.
 	\item \TeX\ Live~\cite{TeXLive} is the standard Linux distribution.
-	\item Overleaf~\cite{overleaf} is a convenient web app for hosting and 
-	editing your \TeX\ projects.
+	\item Overleaf~\cite{overleaf} is a convenient web app for hosting and editing your \TeX\ projects.
 \end{itemize}
 A more thorough introduction to contemporary \LaTeX\ can be
 found in the \LaTeX\ Wikibook~\cite{Wikibook}.
 
-This document has been configured to use Bib\LaTeX~\cite{biblatex} to
-automatically typeset your bibliography. All you need to do is use
-\verb+\cite{...}+ with a given key from \verb+bib.bib+, and everything
-will be taken care of. There are a variety of bibliography managers you might use rather than directly editing your bib file. Bibdesk comes with Mac\TeX, but most distributions don't include a manager. Consult \url{en.wikipedia.org/wiki/Comparison_of_reference_management_software} for a suitable application
+This document uses features only availables to PDFs, so pdfLaTeX or some other pdf-first compiler is prefered.
+If you use XeLaTeX or LuaLaTeX you will likely need to change some of the packages loaded in \verb+LA_Tech.cls+ and in \verb+thesis.tex+.
 
-I set the bibliography to use IEEE style, but it supports
-a variety of needs. You only need to change the options in 
-\verb+\usepackage[...]{biblatex}+ in \verb+thesis.tex+ to 
-suit most formatting options.
+This document has been configured to use Bib\LaTeX~\cite{biblatex} to automatically typeset your bibliography.
+All you need to do is use \verb+\cite{...}+ with a given key from \verb+bib.bib+, and everything will be taken care of.
+There are a variety of bibliography managers you might use rather than directly editing your bib file.
+Bibdesk comes with Mac\TeX, but most distributions don't include a manager.
+Consult \url{en.wikipedia.org/wiki/Comparison_of_reference_management_software} for a suitable application.
+
+I set the bibliography to use IEEE style, but it supports a variety of needs.
+You only need to change the options in \verb+\usepackage[...]{biblatex}+ in \verb+thesis.tex+ to suit most formatting options.

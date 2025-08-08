@@ -9,21 +9,14 @@
 
 \begin{itemize}
 \item
-When printing from a pdf from Adobe, you {\bf must select the option
-``Page scaling: None."} otherwise Adobe will be ``helpful" and
-mess up the margins.
+When printing from a pdf from Adobe, you {\bf must select the option ``Page scaling: None."} otherwise Adobe will be ``helpful" and mess up the margins.
+
+\item \LaTeX\ can inform you of most typsetting errors it cannot correct.
+Overleaf and most \LaTeX\ editors will show you any errors or warning, but if you run \LaTeX\ from the command line then I recommend you run \verb+texlogfilter+ on the resulting log file to see them.
 
 \item
-This document uses features only availables to PDFs,
-so pdfLaTeX or some other pdf-first compiler is prefered.
-If you use XeLaTeX or LuaLaTeX you will likely need to
-change some of the packages loaded in \verb+LA_Tech.cls+ and in
-\verb+thesis.tex+.
-
-\item
-Check for ``widows," ``orphans," and words that spill into the margin.
-These should be the most common formatting errors that \LaTeX \
-does not fix automatically.
+Check for ``widows," ``orphans."
+These should be the most common formatting errors that \LaTeX\ does not fix automatically.
 
 \item
 Format checkers will mark English mistakes if they happen to see them,
