@@ -7,14 +7,11 @@
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{mathtools}
 \usepackage[mathscr]{eucal}
-\usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage{psfrag}
 \usepackage{ifthen}
 \usepackage{array}
-\usepackage{longtable}
 \usepackage{fancyvrb}
-\usepackage{color}
 \usepackage{float}
 \usepackage{booktabs}
 \usepackage{cprotect}
@@ -53,16 +50,14 @@
 	INVERTED PYRAMID FORM
 }
 \author{Your Name}
-\date{Defense Date}
-\supervisor{Dr. Gabber}
-\project{Master/PhD of}
+%\date{Defense Date}
+%\project{PhD of Mathematics}
 \college{\uppercase{Engineering and Science}}
+%\degree{BS}
 
-
-%Main file to compile the thesis.
-%DO NOT CHANGE THIS FILE, EXCEPT FOR THE INCLUDE COMMANDS
+% Document environment
+% DO NOT CHANGE THIS FILE, EXCEPT FOR THE INCLUDE COMMANDS
 \begin{document}
-	\scrollmode
 	\hypersetup{pageanchor=false}
 	\include{tex/nagging.tex}
 	\thispagestyle{empty}
@@ -79,15 +74,17 @@
 	\include{tex/abstract}
 	
 	\thispagestyle{empty}
+	\addcontentsline{toc}{chapter}{APPROVAL FOR SCHOLARLY DISSEMINATION}
 	Replace this page with the approval for
 	scholarly dissemination form.
 	
 	\include{tex/dedication}
 	
-	\include{tex/contents}  % This file typesets the Table of Contents,
-	                        % List of Tables, and List of Figure.
-	                        % DO NOT CHANGE THIS FILE
+	\tableofcontentstech
+	\listoftablestech  % Remove command if you have no figures
+	\listoffigurestech % Remove command if you have no tables
 	
+		
 	\include{tex/acknowledgements}
 	\include{tex/preface}
 	
@@ -117,7 +114,7 @@
 	% Bibliography
 	\begin{singlespace}
 	
-	\setlength{\bibitemsep}{24pt}
+	\setlength{\bibitemsep}{12pt}
 	\printbibliography[
 		heading=bibintoc,
 		title={BIBLIOGRAPHY}
@@ -125,5 +122,4 @@
 	\end{singlespace}
 	
 	\include{tex/chapter_vita}
-	\batchmode
 \end{document}

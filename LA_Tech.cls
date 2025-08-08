@@ -10,11 +10,13 @@
 \usepackage[labelfont=bf]{caption} %For bold label for figures and tables (for indented captions, use the "hang" option.
 \usepackage[calcwidth]{titlesec}
 \usepackage{fancyhdr}
-\usepackage{indentfirst,microtype}
+\usepackage[nopatch=footnote]{microtype}
+\usepackage{indentfirst}
 \usepackage{amsmath}
 \usepackage[absolute]{textpos}
 \usepackage{setspace}
 \usepackage{enumitem}
+\usepackage{xcolor}
 %% Additional TeX/LaTeX code...
 
 %This is to avoid widows, orphans, and hypenations at the end of a page.
@@ -25,25 +27,16 @@
 \AtBeginDocument{\setlength\abovedisplayskip{3pt}}
 \AtBeginDocument{\setlength\belowdisplayskip{3pt}}
 
-% Manually adjusting the spacing before and after floats to work well with
-% double spacing
-\setlength{\intextsep}{0pt}
-\setlength{\belowcaptionskip}{0pt}
+% Adjusting the spacing before and after floats, behavior affected by captions package
+\setlength{\intextsep}{24pt} % Vertical space above and below [h] floats
+\setlength{\textfloatsep}{24pt plus 2pt minus 2pt} % vertical space above/below [b]/[t] floats
+\setlength{\abovecaptionskip}{12pt} % Between caption and float
+\setlength{\belowcaptionskip}{0pt} % Additional space between captions and text
 
-\let\oldfigure=\figure
-\let\endoldfigure=\endfigure
-\renewenvironment{figure}{%
-	\vspace{0.65\baselineskip}
-	\begin{oldfigure}%
-}%
-{%
-	\end{oldfigure}%
-}
 
 \let\oldtable=\table
 \let\endoldtable=\endtable
 \renewenvironment{table}{%
-	\vspace{0.6\baselineskip}
 	\renewcommand*{\arraystretch}{1}
 	\begin{oldtable}%
 }%
@@ -104,7 +97,7 @@
 % And they should not be centered
 \titleformat{\subsection}{\singlespacing\normalsize\bfseries}{\thetitle}{1ex}{}
 \titlespacing{\subsection}{0pt}{3pt}{0ex}
-%\titlespacing{\subsection}{0pt}{2ex}{0ex} %original LMK, double space better expressed with 3pt
+
 
 %spacing for subsubsections
 \titlespacing{\subsubsection}{0pt}{3pt}{0ex}
@@ -177,17 +170,16 @@
 % Redefining \maketitle....................................
 \newcommand*{\project}[1]{\gdef\@project{#1}%
 }
-\newcommand*{\@project}{Final Year Project}
+\newcommand*{\@project}{\color{red}{Project}}
 \newcommand*{\previousdegree}[1]{\gdef\@degree{#1}%
 }
-\newcommand*{\@college}{Enter college}
+\newcommand*{\@college}{\color{red}{Enter college}}
 \newcommand*{\college}[1]{\gdef\@college{#1}%
 }
-\newcommand*{\@degree}{Previous degree(s)}
-\newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}%
+\newcommand*{\@degree}{\color{red}{Previous degree(s)}}
+\newcommand*{\@work}{Dissertation/Thesis}
+\newcommand*{\work}[1]{\gdef\@work{#1}%
 }
-\newcommand*{\@supervisor}{\texttt{\string\supervisor} currently
-not set. Please fix this.}
 \renewcommand*{\maketitle}{%
 	\begin{titlepage}
 	\setlength{\lineskip}{14pt}
@@ -203,7 +195,7 @@ not set. Please fix this.}
 	
 	\begin{textblock*}{\textwidth}(0pt, 29\lineskip)
 		\begin{singlespace}%
-		A Dissertation Presented in Partial Fulfillment \\
+		A \@work\ Presented in Partial Fulfillment \\
 		of the Requirements for the Degree \\
 		{\@project\unskip\strut}
 		\end{singlespace}
@@ -222,5 +214,84 @@ not set. Please fix this.}
 	
 	\end{titlepage}
 }
+
+\newcommand*{\tableofcontentstech}{
+	% Tables of contents
+	\newpage
+	\begin{singlespace}
+		% This configures the space before the title
+		\renewcommand{\cftbeforetoctitleskip}{.6in}
+		% this configures the space after the title
+		\renewcommand{\cftaftertoctitleskip}{1em}
+		% This makes the title LIST OF TABLES, centered in Large bfseries
+		\renewcommand{\contentsname}{TABLE OF CONTENTS}
+		\renewcommand{\cfttoctitlefont}{\hfill\large\bfseries}
+		\renewcommand{\cftaftertoctitle}{\hfill}
+		% This changes the chapter font to the same as a section (no bold)
+		\renewcommand{\cftchapfont}{\cftsecfont}
+		% this add dots
+		\renewcommand{\cftchapdotsep}{\cftsecdotsep}
+		% This unnbolds the dots and page numbers
+		\renewcommand{\cftchapleader}{\normalfont\cftdotfill{\cftsecdotsep}}
+		\renewcommand{\cftchappagefont}{\normalfont}
+		\setlength{\cftparskip}{1.0\baselineskip}%
+		\tableofcontents
+	\end{singlespace}
+}
+
+\newcommand*{\listoftablestech}{
+	% list of tables
+	\newpage
+	\begin{singlespace}
+		\phantomsection
+		\addcontentsline{toc}{chapter}{LIST OF TABLES}
+		% This configures the space before the title
+		\renewcommand{\cftbeforelottitleskip}{.6in}
+		% this configures the space after the title
+		\renewcommand{\cftafterlottitleskip}{1em}
+		% This makes the title LIST OF TABLES, centered in bfseries
+		\renewcommand{\listtablename}{LIST OF TABLES}
+		\renewcommand{\cftlottitlefont}{\hfill\large\bfseries}
+		\renewcommand{\cftafterlottitle}{\hfill}
+		
+		\setlength{\cftparskip}{1.0\baselineskip}
+		\renewcommand{\cfttabpresnum}{Table~}
+		% This will correct the indent so the above added text doesn't distort it
+		
+		\newlength{\mylenTable}
+		\settowidth{\mylenTable}{\cfttabpresnum\cfttabaftersnum}
+		\hyphenpenalty=100000
+		
+		\listoftables
+	\end{singlespace}
+}
+	
+	
+\newcommand*{\listoffigurestech}{
+	\newpage
+	\begin{singlespace}
+		\phantomsection
+		\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+		% This configures the space before the title
+		\renewcommand{\cftbeforeloftitleskip}{.6in}
+		% this configures the space after the title
+		\renewcommand{\cftafterloftitleskip}{1em}
+		% This makes the title LIST OF FIGURES, centered in Large bfseries
+		\renewcommand{\listfigurename}{LIST OF FIGURES}
+		\renewcommand{\cftloftitlefont}{\hfill\large\bfseries}
+		\renewcommand{\cftafterloftitle}{\hfill}
+		% This cause double spacing between entries, single spacing with line wraps
+		\setlength{\cftparskip}{1.0\baselineskip}
+		\renewcommand{\cftfigpresnum}{Figure~}
+		% This will correct the indent so the above added text doesn't distort it
+		\newlength{\mylenFigure}
+		\settowidth{\mylenFigure}{\cftfigpresnum\cftfigaftersnum}
+		\hyphenpenalty=100000
+		\listoffigures
+	\end{singlespace}
+}
+		
+
+
 
 \endinput
