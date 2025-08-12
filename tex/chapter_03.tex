@@ -1,190 +1,159 @@
-\chapter{PLACEMENT OF FIGURES IN \LaTeX }\label{chap2:body1}
+\chapter{PLACEMENT OF FIGURES AND TABLES IN \LaTeX }\label{chap2:body1}
+
+\LaTeX\ treats figures and tables as floating objects, placing them where the compiler feels it is best~\cite{mittelbach2014}.
+If you place a \emph{float} after the paragraph in which it is first referenced, then it will always be placed on the same page or later in the document.
+The \verb+flafter+ package restricts this placement so that a float always comes after its first call-out; you may activate it by uncommenting \verb+\usepackage{flafter}+ in \verb+thesis.tex+.
+
+The compiler does not always make the optimal decision when placing floats because it always chooses the first acceptable option.
+The placement of floats must be optimized manually when finalizing a manuscript by changing their position within the source file and applying the optional position argument \verb+[htbp]+---here, top, bottom, or its own page.
+Changing the argument to \verb+[t]+ restricts the float to the top of a page and adding \verb+!+ relaxes some of the restrictions the compiler has for rejecting positions.
+
+The space between text and floats for \verb+[tb]+ is reliably correct, but because of how doublespacing is implemented, an extra line of space is present below \verb+[h]+ figures.
+To correct this, Figure~\ref{fig:pg1} has a negative \verb+\vspace{...}+ command below the caption.
 
 
-When creating figures in \LaTeX, it is important to realize that
-different types of figures are imported differently, leading to
-different margins below the figure.
-For diagrams, as in Figure~\ref{pg1},
-\TeX CAD (see \cite{texcad}) is recommended since it creates
-native vector images, and text in it will match the rest of your project.
-The line in Figure~\ref{pg1} is at height $y=0$ in \TeX CAD.
-The distance between the figure and the caption is supposed to be
-a double space.
-Hence your lowest object should be at height $y=???$mm in \TeX CAD.
-A double space should separate the figure from paragraph text
-above or below it, which is done in Figure \ref{pg1}.
+%%%%%%%%%%%%%%%%%
+\section{Figures}
 
-\begin{figure}[htb]
+When creating figures in \LaTeX, it is important to realize that different types of figures are imported differently, leading to different margins below the figure.
+For diagrams, as in Figure~\ref{fig:pg1}, \TeX CAD~\cite{texcad} is recommended since it creates native vector images, and text in it will match the rest of your project.
+The line in Figure~\ref{fig:pg1} is at height $y=0$ in \TeX CAD.
+The distance between the figure and the caption is supposed to be a double space.
+Hence your lowest object should be near $y=0$ in \TeX CAD.
+A double space should separate the figure from paragraph text above or below it, which is done in Figure~\ref{fig:pg1}.
+
+\begin{figure}[h]
 	\centering
 	\input{figs/petersen_graph_with_bottom.pic}
 	\caption{
-	The line in the figure above is at height $y=0$ in \TeX CAD.
-	Note that \LaTeX \ automatically typesets captions single-spaced.
-	}
-	\label{pg1}
+		The line in the figure above is at height $y=0$ in \TeX CAD.
+		Note that \LaTeX \ automatically typesets captions single-spaced.}
+	\label{fig:pg1}
+	\vspace{-\baselineskip}
 \end{figure}
 
-There will be more white space between the ``bottom" of the figure and
-the caption if the lowest object is higher than $y=0$.
-Figure \ref{pg3} shows how items that are placed too high can
-distort the distance between the image and the caption.
-I've configured the float spacing to get appropriate results
---- doublespace between the float and surrounding paragraphs --- but
-if you have trouble then use \verb+\vspace{}+ to add or subtract
-vertical space.
+There will be more white space between the ``bottom" of the figure and the caption if the lowest object is higher than $y=0$.
+Figure~\ref{fig:pg2} shows how items that are placed too high can distort the distance between the image and the caption.
+Additionally, notice how since it is positioned with \verb+[t]+ is does not need any additional spacing commands.
+Other packages for creating figures such as TikZ~\cite{pgftikz} automatically create tight boxes around its drawings, but TikZ is also quite complicated and isn't for the light of heart.
 
-\begin{figure}[htb]
+\begin{figure}[t]
 	\centering
 	\input{figs/petersen_graph_high.pic}
-	\caption{If your figure has some white space above the unseen actual border,
-	like this one, only less extreme, please make a note on the printout that
-	goes to the proofreader. Without the line on the bottom and the text,
-	this figure would not be acceptable (too much white space).
-	Disclaimer: This is an example of a {\bf bad} figure with too much
-	white space between content and bounding box.}
-	\label{pg3}
-\end{figure}
-
-
-
-Because \LaTeX \ treats figures as floating objects,
-the correct placement of figures is effected with the
-\verb+[htb]+ (``here, top, or bottom") option.
-Placing your figure after the paragraph that first refers to it
-and using \verb+[hbt]+ will place the figure right there, if possible, and,
-if not, it will place the figure at bottom of the page, or
-the top of the next page,
-which is in accordance with technical writing rules.
-This is how Figures \ref{pg1} and \ref{pg3} were placed.
-
-Most picture formats can be imported. In Figure~\ref{batgull2},
-eps files were used because this template was originally made with
-output to dvi files in mind, but since it's assumed you'll output
-straight to pdf you can use any standard image file type.
-
-\begin{figure}[hbt] %% figure
-	\centering
-	\includegraphics[width=.45\linewidth]{figs/bat_b.eps}\hspace*{0.04in}
-	\includegraphics[width=.36\linewidth]{figs/gull2_b.eps}\\
 	\caption{
-	Note how a picture that was created or imported differently has a different
-	space between caption and image than the line drawing in Figure
-	\protect\ref{pg1}. (Left) Bat flight is being studied as part of an
-	Air Force Office of Scientific Research Multidisciplinary
-	University Research Initiative project.
-	Image credit: \url{mime.oregonstate.edu/news/story/2103}, (Right)
-	Morphing gull wings.
-	}
-	\label{batgull2}
+		If your figure has some white space above the unseen actual border, like this one, only less extreme, please make a note on the printout that goes to the proofreader.
+		Without the line on the bottom and the text, this figure would not be acceptable (too much white space).
+		Disclaimer: This is an example of a {\bf bad} figure with too much white space between content and bounding box.}
+	\label{fig:pg2}
 \end{figure}
 
-Note that imported pictures that have white space on their margins
-will look as if they are placed incorrectly. For such pictures,
-make a note on the printout that goes to format checking.
+Using \verb+\includegraphics+ from the \verb+graphicx+ package, a variety of image formats can be inserted with ease.
+In Figure~\ref{fig:radio pictures}, two JPEG files were imported.
+Their width was restricted to 40\% of the width of the valid text area using the optional width argument.
+You might also want to restrict their height if the two images have different aspect ratios.
+You should only specify one of these so that the image is not warped.
+Note that imported pictures that have white space on their margins will look as if they are placed incorrectly.
+Such pictures should be cropped if possible.
+If they are not easily editable---such as a PDF---you should again use \verb+\vspace+ to correct its appearance.
+
+\begin{figure}[t] %% figure
+	\centering
+	\includegraphics[width=0.4\textwidth]{figs/HL_Tau_protoplanetary_disk.jpg}
+	\hspace*{0.04in}
+	\includegraphics[width=0.4\textwidth]{figs/Saggitarius A star.jpg}\\
+	\caption{
+		Two images captured using radio telescopes.
+		The left is the HL Tauri protoplanetary disk, showing signs of planetary formation at only 100,000 years old~\cite{AlmaPartnership2015}.
+		The right is Saggitarius A\textsuperscript{*}, the black hole at the center of our galaxy~\cite{sagA}.}
+	\label{fig:radio pictures}
+\end{figure}
 
 
+%%%%%%%%%%%%%%%%
 \section{Tables}
 
-Tables pretty much act like figures. Table~\ref{tablelabel}
-is an example of a small table.
+Tables pretty much act like figures.
+Table~\ref{tab:ugly if} is an example of a small table.
+It was made using the built-in \verb+tabular+ environment.
+For tables, the title is to be placed above the table, which is done by putting the \verb+\caption+ command above the table.
+The alignment characters \verb+lrcp+ are required and control the alignment of each column.
+The optional vertical bar \verb+|+ controls the vertical lines separating columns.
 
-
-\begin{table}[hbt]
-\cprotect\caption{A sample table. If there are no tables,
-comment out the \verb+\include{tables}+ command in
-\verb+thesis.tex+.
-{\em Note how the "include" spills too far to the right in the
-list of figures. This type of margin infraction must be
-corrected manually.}
-}
-\label{tablelabel}
-\centerline{
-\begin{tabular}{|l|l|r|}
-\hline
-$p$ & $q$ & $p\Rightarrow q$ \\
-\hline
-F   & F   & T \\
-\hline
-F   & T  & T \\
-\hline
-T  & F   & F  \\
-\hline
-T  & T  & T  \\
-\hline
-\end{tabular}
-}
+\begin{table}[b]
+	%cprotect is necessary for the \verb macros
+	\cprotect\caption{A sample table.
+		If there are no tables, comment out the \verb+\listoftablestech+ command in \verb+thesis.tex+.
+		\emph{Note how the list of tables command spills too far to the right in the list of tables.
+		This type of margin infraction must be corrected manually.}
+	}
+	\label{tab:ugly if}
+	\centering
+	\begin{tabular}{|l|l|r|}
+		\hline
+		$p$ & $q$ & $p\Rightarrow q$ \\
+		\hline
+		F   & F   & T \\
+		\hline
+		F   & T   & T \\
+		\hline
+		T   & F   & F \\
+		\hline
+		T   & T   & T \\
+		\hline
+	\end{tabular}
 \end{table}
 
+For professional-looking tables, you'll want to minimize the number of lines used as done in Table~\ref{tab:pretty if}.
+In addition, this table uses \verb+\toprule+, \verb+\midrule+, and \verb+\bottomrule+ from the package \verb+booktabs+.
+These have improved vertical spacing over the built-in \verb+\hline+ and pleasantly split vertical lines.
+Again, since this table was placed using \verb+[h]+, an extra \verb+\vspace+ command is used to manually correct its spacing.
 
-For tables, the title is to be placed above the table,
-which is done by putting the \verb+\caption+ command
-above the table.
-For professional-looking tables, you'll want to minimize
-the number of lines used as done in Table~\ref{tablelabel2}.
-In addition, this table uses \verb+\toprule+, \verb+\midrule+,
-and \verb+\bottomrule+ from the package \verb+booktabs+. These
-have improved vertical spacing over the built-in \verb+\hline+
-and pleasantly split vertical lines.
-\begin{table}[hbt]
-	\caption{Another sample table and another fun rule:
-	Entries in the list of tables/figures
-	should have at least 3 dots in the dotted
-	line between entry and page number. Unless there is
-	an unfortunate spill, which would need to be fixed anyway,
-	\LaTeX \ should do this automatically.
-	}
-	\label{tablelabel2}
+\begin{table}[h]
+	\caption{
+		Another sample table and another fun rule:
+		Entries in the list of tables/figures should have at least 3 dots in the dotted line between entry and page number.
+		Unless there is an unfortunate spill, which would need to be fixed anyway,	\LaTeX\ should do this automatically.}
+	\label{tab:pretty if}
 	\centering
 	\begin{tabular}{l l | r}
-	\toprule
-	$p$ & $q$ & $p\Rightarrow q$ \\
-	\midrule
-	F   & F   & T \\
-	F   & T  & T \\
-	T  & F   & F  \\
-	T  & T  & T  \\
-	\bottomrule
+		\toprule
+		$p$ & $q$ & $p\Rightarrow q$ \\
+		\midrule
+		F   & F   & T \\
+		F   & T   & T \\
+		T   & F   & F \\
+		T   & T   & T \\
+		\bottomrule
 	\end{tabular}
+	\vspace{-\baselineskip}
 \end{table}
 
-More advanced tables might have parts than span multiple
-columns. \LaTeX\ has a command to take care of this
-with \verb+\multicolumn+, which is used in Table~\ref{multi}.
-The command \verb+\multirow+ works similarly and can be accessed
-with the package \verb+multirow+.
+More advanced tables might have parts than span multiple columns.
+\LaTeX\ has a command to take care of this with \verb+\multicolumn+, which is used in Table~\ref{multi}.
+The command \verb+\multirow+ works similarly and can be accessed with the package \verb+multirow+.
+Additionally, this table has a single-line caption/title.
+Because of this, it has to be flush left with the table.
+There's no trivial way to do this (to my knowledge), so the table's width has been set usinng the \verb+tabularx+ environment.
+The capitalized versions of the normal alignment commands will make the rows expand to fill all excess space.
+This is done using the \verb+tabularx+ and \verb+array+ environments and is loaded automatically by \verb+LA_Tech.cls+.
 
 \begin{table}[hbt]
 	\centering
-	\caption{A table with a multicolumn span}
+	\caption{Short name and multicolumn span}
 	\label{multi}
-	\begin{tabular}{l l  r}
-	\toprule
-	\multicolumn{2}{c}{Inputs} & \multicolumn{1}{c}{Output}\\
-	$p$ & $q$ & $p\Rightarrow q$ \\
-	\midrule
-	F   & F   & T \\
-	F   & T  & T \\
-	T  & F   & F  \\
-	T  & T  & T  \\
-	\bottomrule
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{L  L  L | r}		
+		\toprule
+		\multicolumn{3}{c|}{Inputs} & \multicolumn{1}{c}{Output}\\
+		$p$ & $q$ & $r$ & $p \oplus q \oplus r$ \\
+		\midrule
+		T   & F   & Fdd   & T \\
+		T   & F   & T   & F \\
+		T   & T   & Fd   & F \\
+		T   & T   & T   & T \\
+		F   & F   & Fdd   & F \\
+		F   & F   & T   & T \\
+		F   & T   & F   & T \\
+		F   & T   & Tdddd   & F \\
+		\bottomrule
+	\end{tabularx}
 \end{table}
-
-Matrices are built quite similarly to tables, however they don't
-take alignment options using the built in environments. The
-\verb+amsmath+ package include several convenient matrix environments
-depending on what kind of brace of bracket you want.
-\begin{equation*}
-	\begin{vmatrix}
-		a & b\\
-		c & d
-	\end{vmatrix}
-	=
-	ab - cd
-\end{equation*}
-
-\section{Note on Sections}
-
-If a chapter has only one section, omit the sectioning command.
-So for this chapter, I had the choice to omit the section heading
-``table" or to explain the reasoning in this short ``section."

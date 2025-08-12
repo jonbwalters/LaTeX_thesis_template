@@ -17,6 +17,7 @@
 \usepackage{setspace}
 \usepackage{enumitem}
 \usepackage{xcolor}
+\usepackage{tabularx, array}
 %% Additional TeX/LaTeX code...
 
 %This is to avoid widows, orphans, and hypenations at the end of a page.
@@ -28,11 +29,12 @@
 \AtBeginDocument{\setlength\belowdisplayskip{3pt}}
 
 % Adjusting the spacing before and after floats, behavior affected by captions package
-\setlength{\intextsep}{24pt} % Vertical space above and below [h] floats
+\setlength{\intextsep}{24pt plus 2pt minus 2pt} % Vertical space above and below [h] floats
 \setlength{\textfloatsep}{24pt plus 2pt minus 2pt} % vertical space above/below [b]/[t] floats
-\setlength{\abovecaptionskip}{12pt} % Between caption and float
+\setlength{\abovecaptionskip}{12pt plus 1pt minus 1pt} % Between caption and figure/table
 \setlength{\belowcaptionskip}{0pt} % Additional space between captions and text
 
+\captionsetup[table]{singlelinecheck=false}
 
 \let\oldtable=\table
 \let\endoldtable=\endtable
@@ -291,6 +293,11 @@
 	\end{singlespace}
 }
 		
+
+% Adding column types for tabularx using array
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{L}{X}
 
 
 
