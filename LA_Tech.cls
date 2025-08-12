@@ -75,7 +75,7 @@
 
 % Header formatting..........................................
 \newlength{\SpaceBeforeChapter}
-\setlength{\SpaceBeforeChapter}{0.55in}
+\setlength{\SpaceBeforeChapter}{0.55in plus 4pt minus 4pt}
 
 % To create triple spacing, we use single spacing,
 % then add 3ex to create triple spacing
