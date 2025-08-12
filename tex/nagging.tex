@@ -5,41 +5,37 @@
 
 \centerline{\bf \Large Students: Remember This}
 
-
+\smallskip
 
 \begin{itemize}
-\item
-When printing from a pdf from Adobe, you {\bf must select the option ``Page scaling: None."} otherwise Adobe will be ``helpful" and mess up the margins.
-
-\item \LaTeX\ can inform you of most typsetting errors it cannot correct.
-Overleaf and most \LaTeX\ editors will show you any errors or warning, but if you run \LaTeX\ from the command line then I recommend you run \verb+texlogfilter+ on the resulting log file to see them.
-
-\item
-Check for ``widows," ``orphans."
-These should be the most common formatting errors that \LaTeX\ does not fix automatically.
-
-\item
-Format checkers will mark English mistakes if they happen to see them,
-but they are not proofreaders. So passing the format check does not
-mean your spelling and grammar are correct, and mistakes that were
-not caught in one format check may be caught in another.
-(The goal for using this template is to
-pass the format check on the first try, though.)
-
-\item
-Remove this page, but keep the next
-page on top of all drafts submitted for
-format and English checks.
-
-\item
-Remove this page and the next one from the final version
-that is submitted for binding.
-
-
+	\item When printing from a pdf from Adobe, you must select the option {\bf``Page scaling: None."}
+	Otherwise, Adobe will be ``helpful" and mess up the margins.
+	
+	\item Remove this page but leave the next page for the proofreaders.
+	
+	\item Remove this page and the next one from the final version that is submitted for binding.
+	
+	\item Format checkers will mark English mistakes if they happen to see them, but they are not proofreaders.
+	So passing the format check does not mean your spelling and grammar are correct, and mistakes that were not caught in one format check may be caught in another.
+\end{itemize}
+\smallskip
+\noindent Additionally there are a few known issues with this template that you should check if you want to pass on your first try.
+\begin{itemize}
+	\item Margin violations, called ``overfull'' or ``underfull'' \verb+\hbox+ or \verb+\vbox+.
+	(These are alerted to you in the log file or somewhere in the GUI of your editor.)
+	
+	\item Widows and orphans---single lines that are split from their paragraph at a page break.
+	
+	\item Spacing below \verb+[h]+ (inline) floats.
+	
+	\item Spacing between captions and their figures.
+	
+	\item Each figure must be referred to by an in-text reference before it is shown.
+	\emph{Even if it is on the same page as the figure}, it will be sent back to you.
 \end{itemize}
 
-
-Good advice for feedback from proofreaders in general:
+\smallskip
+\noindent Good advice for feedback from proofreaders in general:
 When the format for a certain type of entry, say a section heading,
 is marked as ``to be corrected" (long section headings are supposed
 to be in inverted pyramid form), it is best to
@@ -72,71 +68,44 @@ documents and other documents, we request that the following
 be kept in mind.
 
 \begin{itemize}
-\item
-This document was typeset using Louisiana Tech's approved
-\LaTeX \ template. Therefore most formatting
-should be a non-issue.
+	\item This document was typeset using Louisiana Tech's approved \LaTeX \ template.
+	Therefore most formatting should be a non-issue.
+	
+	\item Issues that should not require correction, except as indicated below.
+
+	\begin{itemize}
+		\item Global margins, order of sections, page numbering, title page, format of
+		headings, table of contents, list of figures, list of tables, bibliography.
+		(All approved when the template was created.)
+		
+		\item \LaTeX\ is {\em the} professional standard for mathematical typesetting.
+		Equations are typeset with the \LaTeX \ default options, which should not be adjusted.
+		
+		\item Some built in font sizes cannot be changed.
+		Font sizes for headings, etc., were approved, even if they may look a little different than in WORD documents.
+	\end{itemize}
+
+	\item Issues that require attention.
+	There are some situations in which \LaTeX' automatic formatting is less than optimal.
+
+	\begin{itemize}
+		\item Margin infractions on individual lines.
+		The global margins have been approved, but if the program does not know how to split a long term, it can spill into the margin.
+		This is especially likely in typeset equations and can and should be fixed.
+		
+		\item	Widows and orphans.
+		Linebreaking is automatic and sometimes sleaves the first line of a paragraph on the preceding page or puts the last line on the next page.
+		
+		\item English spelling, grammar, punctuation, etc.
+		
+		\item {\em Gross} infractions on the placement and spacing of figures.
+		Because of the way \LaTeX \ imports and creates images, the distance between a figure and its caption can vary slightly.
+		Large white spaces should be flagged, though.
+		
+	\end{itemize}
 
 \item
-Issues that should not require correction, except
-as indicated below.
-
-\vspace{.1in} %counteracts the macro that is calibrated for double spaced typing
-
-\begin{itemize}
-\item
-Global margins, order of sections, page numbering,
-title page, format of
-headings, table of contents, list of figures, list of tables.
-(All approved when the template was created.)
-
-\item
-\LaTeX \ is {\em the} professional standard for mathematical typesetting.
-Equations are typeset with
-the \LaTeX \ default options, which should not be adjusted.
-
-\item
-Some built in font sizes cannot be changed.
-Font sizes for headings, etc.,
-were approved, even if they may look a little different
-than in WORD documents.
-
-\end{itemize}
-
-\item
-Issues that require attention.
-There are some situations in which
-\LaTeX' automatic formatting is less than optimal.
-
-\vspace{.1in} %counteracts the macro that is calibrated for double spaced typing
-
-\begin{itemize}
-\item
-Margin infractions on individual lines.
-The global margins have been approved, but if the program
-does not know how to split a long term, it can spill into the margin.
-This is especially likely in typeset equations and can and should be
-fixed.
-
-\item
-Widows and orphans. Linebreaking is automatic and sometimes
-leaves the first line of a paragraph on the preceding page or
-puts the last line on the next page.
-
-\item
-English spelling, grammar, punctuation, etc.
-
-\item
-{\em Gross} infractions on the placement and spacing of figures.
-Because of the way \LaTeX \ imports and creates images,
-the distance between a figure and its caption can vary slightly.
-Large white spaces should be flagged, though.
-
-\end{itemize}
-
-\item
-Please mark {\em all} recommended changes in the first
-pass through.
+Please mark {\em all} recommended changes in the first pass through.
 
 \end{itemize}
 
