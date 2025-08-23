@@ -170,18 +170,21 @@
 \setlist{nosep}
 
 % Redefining \maketitle....................................
-\newcommand*{\project}[1]{\gdef\@project{#1}%
-}
-\newcommand*{\@project}{\color{red}{Project}}
-\newcommand*{\previousdegree}[1]{\gdef\@degree{#1}%
-}
-\newcommand*{\@college}{\color{red}{Enter college}}
-\newcommand*{\college}[1]{\gdef\@college{#1}%
-}
-\newcommand*{\@degree}{\color{red}{Previous degree(s)}}
-\newcommand*{\@work}{Dissertation/Thesis}
-\newcommand*{\work}[1]{\gdef\@work{#1}%
-}
+\newcommand*{\@project}{\textcolor{red}{PhD/Masters of ...}}
+\newcommand*{\project}[1]{\gdef\@project{#1}}
+
+\newcommand*{\@degree}{\textcolor{red}{Previous degree(s)}}
+\newcommand*{\previousdegree}[1]{\gdef\@degree{#1}}
+
+\newcommand*{\@college}{\textcolor{red}{Enter college}}
+\newcommand*{\college}[1]{\gdef\@college{#1}}
+
+\newcommand*{\@work}{\textcolor{red}{Dissertation/Thesis}}
+\newcommand*{\work}[1]{\gdef\@work{#1}}
+
+\date{\textcolor{red}{August 2025}}
+\author{\textcolor{red}{Your Name}}
+
 \renewcommand*{\maketitle}{%
 	\begin{titlepage}
 	\setlength{\lineskip}{14pt}
