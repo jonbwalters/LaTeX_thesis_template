@@ -170,20 +170,46 @@
 \setlist{nosep}
 
 % Redefining \maketitle....................................
-\newcommand*{\@project}{\textcolor{red}{PhD/Masters of ...}}
+\newcommand*{\@project}{
+	\textcolor{red}{PhD/Masters of ...}
+	\ClassWarningNoLine{LA_Tech}{Set project}
+}
 \newcommand*{\project}[1]{\gdef\@project{#1}}
 
-\newcommand*{\@degree}{\textcolor{red}{Previous degree(s)}}
+\newcommand*{\@degree}{
+	\textcolor{red}{Previous degree(s)}
+	\ClassWarningNoLine{LA_Tech}{Set previous degrees}
+}
 \newcommand*{\previousdegree}[1]{\gdef\@degree{#1}}
 
-\newcommand*{\@college}{\textcolor{red}{Enter college}}
+\newcommand*{\@college}{
+	\textcolor{red}{Enter college}
+	\ClassWarningNoLine{LA_Tech}{Set college}
+}
 \newcommand*{\college}[1]{\gdef\@college{#1}}
 
-\newcommand*{\@work}{\textcolor{red}{Dissertation/Thesis}}
+\newcommand*{\@work}{
+	\textcolor{red}{Dissertation/Thesis}
+	\ClassWarningNoLine{LA_Tech}{Set work}
+}
 \newcommand*{\work}[1]{\gdef\@work{#1}}
 
-\date{\textcolor{red}{August 2025}}
-\author{\textcolor{red}{Your Name}}
+\date{
+	\textcolor{red}{August 2025}
+	\ClassWarningNoLine{LA_Tech}{Set date}
+}
+\author{
+	\textcolor{red}{Your Name}
+	\ClassWarningNoLine{LA_Tech}{Set name}
+}
+\title{
+	\textcolor{red}{
+	THESIS TITLE GOES HERE IN CAPITAL LETTERS, SPLIT FOR \\
+	INVERTED PYRAMID FORM
+	}
+	\ClassWarningNoLine{LA_Tech}{Set title}
+}
+
 
 \renewcommand*{\maketitle}{%
 	\begin{titlepage}
