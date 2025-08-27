@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{LA_Tech}
+\ProvidesClass{LA_Tech}[2025-08-27 Louisiana Tech University thesis/dissertation class]
 
 %% Load base
 \LoadClass[12pt]{report}
