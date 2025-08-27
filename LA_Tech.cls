@@ -37,15 +37,8 @@
 
 \captionsetup[table]{singlelinecheck=false}
 
-\let\oldtable=\table
-\let\endoldtable=\endtable
-\renewenvironment{table}{%
-	\renewcommand*{\arraystretch}{1}
-	\begin{oldtable}%
-}%
-{%
-	\end{oldtable}%
-}
+% Corrects spacing issue caused by doublspacing. Alternative would be to redefine every math array environment.
+\AddToHook{env/table/begin}{\renewcommand*{\arraystretch}{1}}
 
 % Paragraph formatting..................................
 % double spacing
