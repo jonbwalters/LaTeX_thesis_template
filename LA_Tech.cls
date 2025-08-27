@@ -5,19 +5,20 @@
 \LoadClass[12pt]{report}
 
 %% Load additional packages and commands.
-\usepackage{hyperref}
-\usepackage{tocloft}
-\usepackage[labelfont=bf]{caption} %For bold label for figures and tables (for indented captions, use the "hang" option.
-\usepackage[calcwidth]{titlesec}
-\usepackage{fancyhdr}
-\usepackage[nopatch=footnote]{microtype}
-\usepackage{indentfirst}
-\usepackage{amsmath}
-\usepackage[absolute]{textpos}
-\usepackage{setspace}
-\usepackage{enumitem}
-\usepackage{xcolor}
-\usepackage{tabularx, array}
+\RequirePackage{hyperref}
+\RequirePackage{tocloft}
+\RequirePackage[labelfont=bf]{caption} %For bold label for figures and tables (for indented captions, use the "hang" option.
+\RequirePackage[calcwidth]{titlesec}
+\RequirePackage{fancyhdr}
+\RequirePackage[nopatch=footnote]{microtype}
+\RequirePackage{indentfirst}
+\RequirePackage{amsmath}
+\RequirePackage[absolute]{textpos}
+\RequirePackage{setspace}
+\RequirePackage{enumitem}
+\RequirePackage{xcolor}
+\RequirePackage{tabularx}
+\RequirePackage{array}
 %% Additional TeX/LaTeX code...
 
 %This is to avoid widows, orphans, and hypenations at the end of a page.
