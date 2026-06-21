@@ -25,19 +25,19 @@ Don't worry too much about any such mistakes until it's time to submit your thes
 Thankfully, \LaTeX\ can inform you of most typsetting errors it cannot correct.
 Overleaf and most \LaTeX\ editors will show you any errors or warnings, but if you run \LaTeX\ from the command line, then you should run \verb+texlogfilter+ on the resulting log file to see them.
 If you are going to use the command line to run \LaTeX, you will find a makefile with all the necessary commands for building \verb+thesis.pdf+.
+By the way, \LaTeX\ may need to be run multiple times on a file to resolve all references; \verb+latexmk+ can automatically recompile your document as needed and even call other support programs as needed.
 
 \LaTeX\ has a variety of distributions for various platforms.
 These will manage all the packages, \TeX\ engines, and auxiliary programs for you.
 \begin{itemize}
 	\item Mik\TeX~\cite{MiKTeX} is the standard \LaTeX\ distribution for Windows and WinEdt~\cite{WinEdt} is a standard front end.
 	WinEdt asks for a registration fee, but \TeX nicCenter~\cite{TeXnicCenter} is free. 
-	\item Mac\TeX~\cite{MacTeX} is the standard MacOS distribution.
+	\item Mac\TeX~\cite{MacTeX} is the standard MacOS distribution (it's an idiot-proof version of \TeX\ Live).
 	It comes with the \TeX Shop editor.
 	\item \TeX\ Live~\cite{TeXLive} is the standard Linux distribution.
 	\item Overleaf~\cite{overleaf} is a convenient web app for hosting and editing your \TeX\ projects.
 \end{itemize}
-A more thorough introduction to contemporary \LaTeX\ can be found in the \LaTeX\ Wikibook~\cite{Wikibook}.
-By the way, \LaTeX\ may need to be run multiple times on a file to resolve all references; \verb+latexmk+ can automatically recompile your document as needed and even call other support programs as needed.
+Running using some of these distributions on your computer involves quite large download sizes (several gigabytes), but this means that you can run any package you want with full offline access to documentation (run \verb+texdoc <package>+ from the command line with a \TeX\ Live installed to open any package's manual).
 
 By the way, all citations, figure numbers, and section numbers are clickable links; if you want to see which objects are links, comment out \verb+\hypersetup{hidelinks}+ in \verb+thesis.tex+.
 Links are a recent (within the last thirty years) innovation to \TeX\ and are only availables with PDFs, so pdfLaTeX or some other PDF-first compiler is prefered.
@@ -49,6 +49,7 @@ All you need to do is use \verb+\cite{...}+ with a given key from \verb+bib.bib+
 There are a variety of bibliography managers you might use rather than directly editing your bib file.
 Bibdesk comes with Mac\TeX, but most distributions don't include a manager.
 Consult \url{en.wikipedia.org/wiki/Comparison_of_reference_management_software} for a suitable application.
-
 I set the bibliography to use IEEE style, but it supports a variety of needs.
 You only need to change the options in \verb+\usepackage[...]{biblatex}+ in \verb+thesis.tex+ to suit most formatting options.
+
+A more thorough introduction to contemporary \LaTeX\ can be found in the \LaTeX\ Wikibook~\cite{Wikibook} or at latex2e.org~\cite{latex2e}.
